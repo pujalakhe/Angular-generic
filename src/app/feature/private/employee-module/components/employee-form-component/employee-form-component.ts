@@ -27,9 +27,17 @@ export class EmployeeFormComponent implements OnInit {
   constructor(private employeeFormBuilderService: EmployeeFormBuilderService) {}
 
   ngOnInit(): void {
-    this.employeeFormBuilderService.buildEmployeeForm(mockEmployee);
+    this.initializeFrom();
     this.employeeForm = this.employeeFormBuilderService.form;
     this.disableControls();
+  }
+
+  initializeFrom() {
+    if (this.mode == 'add') {
+      this.employeeFormBuilderService.buildEmployeeForm(this.initialData);
+    } else {
+      this.employeeFormBuilderService.buildEmployeeForm(mockEmployee);
+    }
   }
 
   disableControls() {
