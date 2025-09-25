@@ -29,11 +29,6 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatTreeModule } from '@angular/material/tree';
-import {
-  MatButtonToggleGroup,
-  MatButtonToggle,
-} from '@angular/material/button-toggle';
-import { SidebarComponent } from './components/sidebar-component/sidebar-component';
 
 @NgModule({
   exports: [
@@ -71,9 +66,6 @@ import { SidebarComponent } from './components/sidebar-component/sidebar-compone
     MatPaginatorModule,
     MatProgressSpinnerModule,
     MatTreeModule,
-  ],
-  declarations: [
-    SidebarComponent
   ],
 })
 export class MaterialModule {}

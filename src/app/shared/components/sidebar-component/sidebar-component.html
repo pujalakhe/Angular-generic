@@ -1,1 +1,12 @@
-<p>sidebar-component works!</p>
+<nav class="h-full flex flex-col p-4 space-y-2">
+  @for (item of menuItems; track item.route) {
+  <a
+    routerLinkActive="bg-gray-700"
+    class="flex items-center space-x-3 p-2 rounded hover:bg-gray-700 transition"
+    (click)="menuItemClicked.emit()"
+  >
+    <mat-icon>{{ item.icon }}</mat-icon>
+    <span>{{ item.label }}</span>
+  </a>
+  }
+</nav>
