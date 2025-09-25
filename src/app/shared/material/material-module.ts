@@ -33,7 +33,6 @@ import {
   MatButtonToggleGroup,
   MatButtonToggle,
 } from '@angular/material/button-toggle';
-import { SidebarComponent } from './components/sidebar-component/sidebar-component';
 
 @NgModule({
   exports: [
@@ -71,9 +70,6 @@ import { SidebarComponent } from './components/sidebar-component/sidebar-compone
     MatPaginatorModule,
     MatProgressSpinnerModule,
     MatTreeModule,
-  ],
-  declarations: [
-    SidebarComponent
   ],
 })
 export class MaterialModule {}
