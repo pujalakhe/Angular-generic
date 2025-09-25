@@ -4,7 +4,13 @@
   </h2>
   @if(employeeForm){
 
-  <form [formGroup]="employeeForm" (ngSubmit)="onSubmit()" class="space-y-6">
+  <form
+    [formGroup]="employeeForm"
+    (ngSubmit)="onSubmit()"
+    class="space-y-6"
+    [appFocusInvalid]="employeeForm"
+    appAutoFocusInput
+  >
     <!-- Full Name -->
     <mat-form-field class="w-full">
       <mat-label>Full Name</mat-label>
@@ -36,9 +42,11 @@
         Role is required
       </mat-error>
     </mat-form-field>
+
+    <!-- salary -->
     <mat-form-field class="w-full">
       <mat-label>Salary</mat-label>
-      <input matInput formControlName="salary" />
+      <input matInput formControlName="salary" appOnlyNumericValue />
       <mat-error *ngIf="employeeForm?.get('salary')?.hasError('required')">
         Salary is required
       </mat-error>

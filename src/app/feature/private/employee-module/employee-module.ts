@@ -9,15 +9,26 @@ import { MaterialModule } from '../../../shared/material/material-module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AddEmployeeComponent } from './components/add-employee-component/add-employee-component';
 import { UpdateEmployeeFormComponent } from './components/update-employee-form-component/update-employee-form-component';
+import { OnlyNumericValueDirective } from '../../../shared/custom-directives/only-numeric-value-directive';
+import { AutoFocusInputDirective } from '../../../shared/custom-directives/auto-focus-input-directive';
+import { AutoInvalidFocusDirective } from '../../../shared/custom-directives/auto-invalid-focus-directive';
 
 @NgModule({
-  declarations: [EmployeeListComponent, EmployeeFormComponent, AddEmployeeComponent, UpdateEmployeeFormComponent],
+  declarations: [
+    EmployeeListComponent,
+    EmployeeFormComponent,
+    AddEmployeeComponent,
+    UpdateEmployeeFormComponent,
+  ],
   imports: [
     CommonModule,
     MaterialModule,
     ReactiveFormsModule,
     EmployeeRoutingModule,
     PrivateLayoutComponent,
+    OnlyNumericValueDirective,
+    AutoFocusInputDirective,
+    AutoInvalidFocusDirective,
   ],
 })
 export class EmployeeModule {}
