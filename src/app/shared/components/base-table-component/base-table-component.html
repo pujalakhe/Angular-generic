@@ -29,7 +29,10 @@
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
   </table>
-  @if(dataSource.data.length>=5){
+
+  @if (!(dataSource.data.length)) {
+  <div class="p-4 text-center text-gray-500">No records found.</div>
+  } @if(dataSource.data.length>=5){
 
   <mat-paginator
     [pageSize]="5"
