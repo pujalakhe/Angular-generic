@@ -65,9 +65,13 @@
 
     <!-- Buttons -->
     <div class="flex justify-end space-x-4">
+      @if(mode==='add'){
+
       <button mat-stroked-button color="warn" type="button" (click)="onReset()">
         Reset
       </button>
+
+      }
       <button mat-raised-button color="primary" type="submit">
         {{ mode === "add" ? "Save" : "Update" }}
       </button>
