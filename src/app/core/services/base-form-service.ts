@@ -5,6 +5,7 @@ import {
   FormBuilder,
   FormGroup,
 } from '@angular/forms';
+import { disableControls, enableControls } from '../utils/form.utils';
 
 @Injectable({
   providedIn: 'root',
@@ -41,5 +42,19 @@ export abstract class BaseFormService {
 
   resetForm(): void {
     this.form = new FormGroup({});
+  }
+
+  disableControls(controls: string[] | string): void {
+    if (!this.form) {
+      return;
+    }
+    disableControls(this.form, controls);
+  }
+
+  enableControls(controls: string[] | string): void {
+    if (!this.form) {
+      return;
+    }
+    enableControls(this.form, controls);
   }
 }

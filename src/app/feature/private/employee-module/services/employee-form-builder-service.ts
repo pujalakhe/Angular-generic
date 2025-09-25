@@ -14,7 +14,7 @@ export class EmployeeFormBuilderService extends BaseFormService {
       role: [(config?.role ?? '').toString(), Validators.required],
       salary: [(config?.salary ?? '').toString(), Validators.required],
       joiningDate: [
-        (config?.joiningDate ?? '').toString(),
+        config?.joiningDate ? new Date(config.joiningDate) : null,
         Validators.required,
       ],
     });
