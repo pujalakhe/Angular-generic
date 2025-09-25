@@ -2,6 +2,7 @@ import { Component, EventEmitter, Output } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { ROUTE_PATHS } from '../../../core/constants/routes.constant';
 import { MaterialModule } from '../../material/material-module';
+import { MenuItem } from '../../model/menu-item.model';
 
 @Component({
   selector: 'app-sidebar-component',
@@ -11,7 +12,7 @@ import { MaterialModule } from '../../material/material-module';
 })
 export class SidebarComponent {
   @Output() menuItemClicked = new EventEmitter<void>();
-  menuItems: any[] = [
+  menuItems: MenuItem[] = [
     { label: 'Dashboard', icon: 'dashboard', route: ROUTE_PATHS.DASHBOARD },
     {
       label: 'Employees',
