@@ -4,8 +4,8 @@
   <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
     @for (card of cards; track $index) {
 
-    <div
-      class="rounded-lg p-4 text-white flex items-center space-x-4 shadow-lg"
+    <mat-card
+      class="rounded-lg p-4 flex items-center space-x-4 shadow-lg"
       [ngClass]="card.color"
     >
       <mat-icon class="text-4xl">{{ card.icon }}</mat-icon>
@@ -13,100 +13,16 @@
         <div class="text-xl font-semibold">{{ card.value }}</div>
         <div class="text-sm opacity-75">{{ card.title }}</div>
       </div>
-    </div>
+    </mat-card>
+
     }
   </div>
 
   <!-- Recent Employees Table -->
   <div class="bg-white rounded-lg shadow-lg overflow-x-auto">
-    <table
-      mat-table
-      [dataSource]="recentEmployees"
-      class="min-w-full divide-y divide-gray-200"
-    >
-      <!-- Name Column -->
-      <ng-container matColumnDef="name">
-        <th
-          mat-header-cell
-          *matHeaderCellDef
-          class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-        >
-          Name
-        </th>
-        <td
-          mat-cell
-          *matCellDef="let employee"
-          class="px-6 py-4 whitespace-nowrap"
-        >
-          {{ employee.name }}
-        </td>
-      </ng-container>
-
-      <!-- Department Column -->
-      <ng-container matColumnDef="department">
-        <th
-          mat-header-cell
-          *matHeaderCellDef
-          class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-        >
-          Department
-        </th>
-        <td
-          mat-cell
-          *matCellDef="let employee"
-          class="px-6 py-4 whitespace-nowrap"
-        >
-          {{ employee.department }}
-        </td>
-      </ng-container>
-
-      <!-- Role Column -->
-      <ng-container matColumnDef="role">
-        <th
-          mat-header-cell
-          *matHeaderCellDef
-          class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-        >
-          Role
-        </th>
-        <td
-          mat-cell
-          *matCellDef="let employee"
-          class="px-6 py-4 whitespace-nowrap"
-        >
-          {{ employee.role }}
-        </td>
-      </ng-container>
-
-      <!-- Joining Date Column -->
-      <ng-container matColumnDef="joiningDate">
-        <th
-          mat-header-cell
-          *matHeaderCellDef
-          class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-        >
-          Joining Date
-        </th>
-        <td
-          mat-cell
-          *matCellDef="let employee"
-          class="px-6 py-4 whitespace-nowrap"
-        >
-          {{ employee.joiningDate }}
-        </td>
-      </ng-container>
-
-      <tr
-        mat-header-row
-        *matHeaderRowDef="['name', 'department', 'role', 'joiningDate']"
-      ></tr>
-      <tr
-        mat-row
-        *matRowDef="
-          let row;
-          columns: ['name', 'department', 'role', 'joiningDate']
-        "
-      ></tr>
-    </table>
+    <app-base-table-component
+      [columnsArray]="columns"
+      [tableData]="recentEmployees"
+    ></app-base-table-component>
   </div>
 </div>

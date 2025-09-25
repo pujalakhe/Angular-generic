@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Card } from '../../../../../shared/model/dashboard-card.model';
+import { TableColumn } from '../../../../../shared/model/table-column.model';
 
 @Component({
   selector: 'app-dashboard-home-component',
@@ -8,6 +9,12 @@ import { Card } from '../../../../../shared/model/dashboard-card.model';
   styleUrl: './dashboard-home-component.scss',
 })
 export class DashboardHomeComponent {
+  columns: TableColumn[] = [
+    { key: 'name', label: 'Name' },
+    { key: 'department', label: 'Department' },
+    { key: 'role', label: 'Role' },
+    { key: 'joiningDate', label: 'Joining Date' },
+  ];
   // Summary cards
   cards: Card[] = [
     { title: 'Employees', value: 120, icon: 'person', color: 'bg-blue-500' },
