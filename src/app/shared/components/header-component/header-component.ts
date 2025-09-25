@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { MaterialModule } from '../../material-module';
 
 @Component({
@@ -7,4 +7,6 @@ import { MaterialModule } from '../../material-module';
   templateUrl: './header-component.html',
   styleUrl: './header-component.scss',
 })
-export class HeaderComponent {}
+export class HeaderComponent {
+  @Input({ required: true }) header: string = '';
+}

@@ -7,14 +7,14 @@ import { MaterialModule } from '../../../../shared/material-module';
 
 @Component({
   selector: 'app-private-layout-component',
-  imports: [SidebarComponent, RouterModule, MaterialModule],
+  imports: [RouterModule, MaterialModule, SidebarComponent, HeaderComponent],
   templateUrl: './private-layout-component.html',
   styleUrl: './private-layout-component.scss',
 })
 export class PrivateLayoutComponent {
   isSidebarOpen = false;
   isMobile = false;
-
+  header = 'HR Management';
   ngOnInit() {
     this.checkScreenSize();
   }
