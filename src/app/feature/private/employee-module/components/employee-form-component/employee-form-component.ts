@@ -1,16 +1,8 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Employee } from '../../model/employee-model';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormGroup } from '@angular/forms';
 import { EmployeeFormBuilderService } from '../../services/employee-form-builder-service';
 
-const mockEmployee: Employee = {
-  id: '2',
-  name: 'Jane Doe',
-  department: 'HR',
-  role: 'Frontend Developer',
-  salary: '75000',
-  joiningDate: new Date('2023-08-15T00:00:00.000Z'),
-};
 @Component({
   selector: 'app-employee-form-component',
   standalone: false,
@@ -27,34 +19,24 @@ export class EmployeeFormComponent implements OnInit {
   constructor(private employeeFormBuilderService: EmployeeFormBuilderService) {}
 
   ngOnInit(): void {
-    this.initializeFrom();
+    this.#buildForm();
     this.employeeForm = this.employeeFormBuilderService.form;
-    this.disableControls();
+    this.#disableOrEnableControls();
   }
 
-  initializeFrom() {
-    if (this.mode == 'add') {
-      this.employeeFormBuilderService.buildEmployeeForm(this.initialData);
-    } else {
-      this.employeeFormBuilderService.buildEmployeeForm(mockEmployee);
-    }
+  #buildForm() {
+    this.employeeFormBuilderService.buildEmployeeForm(this.initialData);
   }
 
-  disableControls() {
+  #disableOrEnableControls(): void {
+    const fields = ['joiningDate', 'role', 'department'];
     if (this.mode === 'edit') {
-      this.employeeFormBuilderService.disableControls([
-        'joiningDate',
-        'role',
-        'department',
-      ]);
+      this.employeeFormBuilderService.disableControls(fields);
     } else {
-      this.employeeFormBuilderService.enableControls([
-        'joiningDate',
-        'role',
-        'department',
-      ]);
+      this.employeeFormBuilderService.enableControls(fields);
     }
   }
+
   onSubmit(): void {
     if (this.employeeForm?.invalid) {
       this.employeeFormBuilderService.applyTouchAndDirtyToForm();

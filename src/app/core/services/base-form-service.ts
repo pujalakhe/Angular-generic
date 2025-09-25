@@ -1,10 +1,5 @@
 import { Injectable } from '@angular/core';
-import {
-  AbstractControl,
-  AbstractControlOptions,
-  FormBuilder,
-  FormGroup,
-} from '@angular/forms';
+import { AbstractControlOptions, FormBuilder, FormGroup } from '@angular/forms';
 import { disableControls, enableControls } from '../utils/form.utils';
 
 @Injectable({
@@ -26,6 +21,16 @@ export abstract class BaseFormService {
   reset(): void {
     this.form?.reset();
   }
+
+  //In short, options lets you apply rules or behaviors to the whole form, not just individual fields.
+  //   examples:
+  //   buildForm({
+  //   password: ['', Validators.required],
+  //   confirmPassword: ['', Validators.required]
+  // }, {
+  //   validators: this.passwordMatchValidator,
+  //   updateOn: 'blur'
+  // });
 
   buildForm<T extends object>(
     config: T,
