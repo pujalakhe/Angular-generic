@@ -7,11 +7,6 @@ import { ROUTE_PATHS } from '../../../core/constants/routes.constant';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: '',
-    pathMatch: 'full',
-  },
-  {
-    path: '',
     component: DashboardHomeComponent,
   },
 ];

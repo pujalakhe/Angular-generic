@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Output } from '@angular/core';
-import { MaterialModule } from '../../material-module';
 import { RouterModule } from '@angular/router';
 import { ROUTE_PATHS } from '../../../core/constants/routes.constant';
+import { MaterialModule } from '../../material/material-module';
 
 @Component({
   selector: 'app-sidebar-component',

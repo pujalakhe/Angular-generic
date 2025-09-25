@@ -3,7 +3,7 @@ import { RouterModule } from '@angular/router';
 
 import { SidebarComponent } from '../../../../shared/components/sidebar-component/sidebar-component';
 import { HeaderComponent } from '../../../../shared/components/header-component/header-component';
-import { MaterialModule } from '../../../../shared/material-module';
+import { MaterialModule } from '../../../../shared/material/material-module';
 
 @Component({
   selector: 'app-private-layout-component',
