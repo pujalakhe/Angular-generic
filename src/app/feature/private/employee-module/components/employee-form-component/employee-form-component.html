@@ -1,1 +1,69 @@
-<p>employee-form-component works!</p>
+<div class="max-w-2xl mx-auto mt-10 p-6 bg-white shadow-lg rounded-lg">
+  <h2 class="text-2xl font-semibold text-gray-800 mb-6">
+    {{ mode === "add" ? "Add Employee" : "Edit Employee" }}
+  </h2>
+  @if(employeeForm){
+
+  <form [formGroup]="employeeForm" (ngSubmit)="onSubmit()" class="space-y-6">
+    <!-- Full Name -->
+    <mat-form-field class="w-full">
+      <mat-label>Full Name</mat-label>
+      <input matInput formControlName="name" />
+      <mat-error *ngIf="employeeForm?.get('name')?.hasError('required')">
+        Name is required
+      </mat-error>
+    </mat-form-field>
+
+    <!-- Department -->
+    <mat-form-field class="w-full">
+      <mat-label>Department</mat-label>
+      <mat-select formControlName="department">
+        <mat-option value="HR">HR</mat-option>
+        <mat-option value="Finance">Finance</mat-option>
+        <mat-option value="IT">IT</mat-option>
+        <mat-option value="Marketing">Marketing</mat-option>
+      </mat-select>
+      <mat-error *ngIf="employeeForm?.get('department')?.hasError('required')">
+        Department is required
+      </mat-error>
+    </mat-form-field>
+
+    <!-- Role -->
+    <mat-form-field class="w-full">
+      <mat-label>Role</mat-label>
+      <input matInput formControlName="role" />
+      <mat-error *ngIf="employeeForm?.get('role')?.hasError('required')">
+        Role is required
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field class="w-full">
+      <mat-label>Salary</mat-label>
+      <input matInput formControlName="salary" />
+      <mat-error *ngIf="employeeForm?.get('salary')?.hasError('required')">
+        Salary is required
+      </mat-error>
+    </mat-form-field>
+
+    <!-- Joining Date -->
+    <mat-form-field class="w-full">
+      <mat-label>Joining Date</mat-label>
+      <input matInput [matDatepicker]="picker" formControlName="joiningDate" />
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+      <mat-error *ngIf="employeeForm?.get('joiningDate')?.hasError('required')">
+        Joining date is required
+      </mat-error>
+    </mat-form-field>
+
+    <!-- Buttons -->
+    <div class="flex justify-end space-x-4">
+      <button mat-stroked-button color="warn" type="button" (click)="onReset()">
+        Reset
+      </button>
+      <button mat-raised-button color="primary" type="submit">
+        {{ mode === "add" ? "Save" : "Update" }}
+      </button>
+    </div>
+  </form>
+  }
+</div>

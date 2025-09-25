@@ -1,1 +1,14 @@
-<p>employee-list-component works!</p>
+<button
+  mat-raised-button
+  color="primary"
+  [routerLink]="['/', route.EMPLOYEE, route.ADD]"
+>
+  + Add Employee
+</button>
+<button
+  mat-raised-button
+  color="primary"
+  [routerLink]="['/', route.EMPLOYEE, route.UPDATE, '123']"
+>
+  Update Employee
+</button>
