@@ -1,1 +1,4 @@
-<app-employee-form-component [mode]="'edit'"></app-employee-form-component>
+<app-employee-form-component
+  [mode]="'edit'"
+  (formSubmit)="updateEmployee($event)"
+></app-employee-form-component>
