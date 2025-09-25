@@ -6,6 +6,8 @@ import { PrivateLayoutComponent } from '../../../core/constants/components/priva
 import { MaterialModule } from '../../../shared/material/material-module';
 import { HeaderComponent } from '../../../shared/components/header-component/header-component';
 import { BaseTableComponent } from '../../../shared/components/base-table-component/base-table-component';
+import { LoadingComponent } from '../../../shared/components/loading-component/loading-component';
+import { ErrorComponent } from '../../../shared/components/error-component/error-component';
 
 @NgModule({
   declarations: [DashboardHomeComponent],
@@ -16,6 +18,8 @@ import { BaseTableComponent } from '../../../shared/components/base-table-compon
     PrivateLayoutComponent,
     HeaderComponent,
     BaseTableComponent,
+    LoadingComponent,
+    ErrorComponent,
   ],
 })
 export class DashboardModule {}

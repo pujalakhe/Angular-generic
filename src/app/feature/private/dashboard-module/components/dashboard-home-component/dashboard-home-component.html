@@ -5,11 +5,11 @@
     @for (card of cards; track $index) {
 
     <mat-card
-      class="rounded-lg p-4 flex items-center space-x-4 shadow-lg"
+      class="rounded-lg p-4 flex items-center space-x-4 shadow-lg bg-red-200"
       [ngClass]="card.color"
     >
-      <mat-icon class="text-4xl">{{ card.icon }}</mat-icon>
-      <div>
+      <mat-icon class="text-4xl text-center">{{ card.icon }}</mat-icon>
+      <div class="text-center">
         <div class="text-xl font-semibold">{{ card.value }}</div>
         <div class="text-sm opacity-75">{{ card.title }}</div>
       </div>
