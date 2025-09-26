@@ -7,7 +7,7 @@ export const MOCK_EMPLOYEES: Employee[] = [
     department: 'Engineering',
     role: 'Software Developer',
     joiningDate: new Date('2022-03-15'),
-    salary: '70000',
+    salary: '70000000',
   },
   {
     id: '2',
