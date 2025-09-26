@@ -13,6 +13,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { CommonModule } from '@angular/common';
+import { Employee } from '../../../feature/private/employee-module/model/employee-model';
 
 @Component({
   selector: 'app-base-table-component',
@@ -23,6 +24,11 @@ import { CommonModule } from '@angular/common';
 export class BaseTableComponent<T> implements OnInit, AfterViewInit {
   @Input({ required: true }) columnsArray: TableColumn[] = [];
   @Input({ required: true }) tableData?: T[];
+  @Input() showActions = false;
+  @Input() actions: { type: string; label: string; color?: string }[] = [];
+
+  @Output() actionClicked = new EventEmitter<{ type: string; row: Employee }>();
+
   dataSource: MatTableDataSource<T> = new MatTableDataSource();
 
   @ViewChild(MatPaginator) paginator?: MatPaginator;
@@ -35,7 +41,11 @@ export class BaseTableComponent<T> implements OnInit, AfterViewInit {
   }
 
   get displayedColumns(): string[] {
-    return ['sn', ...this.columnsArray.map((c) => c.key)];
+    const cols = ['sn', ...this.columnsArray.map((c) => c.key)];
+    if (this.showActions) {
+      cols.push('actions');
+    }
+    return cols;
   }
 
   getCellValue(element: any, column: TableColumn): any {
@@ -51,5 +61,9 @@ export class BaseTableComponent<T> implements OnInit, AfterViewInit {
   ngAfterViewInit(): void {
     this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;
+  }
+
+  onAction(type: string, row: Employee) {
+    this.actionClicked.emit({ type, row });
   }
 }

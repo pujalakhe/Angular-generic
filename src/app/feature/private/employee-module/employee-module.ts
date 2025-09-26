@@ -12,6 +12,8 @@ import { UpdateEmployeeFormComponent } from './components/update-employee-form-c
 import { OnlyNumericValueDirective } from '../../../shared/custom-directives/only-numeric-value-directive';
 import { AutoFocusInputDirective } from '../../../shared/custom-directives/auto-focus-input-directive';
 import { AutoInvalidFocusDirective } from '../../../shared/custom-directives/auto-invalid-focus-directive';
+import { BaseTableComponent } from '../../../shared/components/base-table-component/base-table-component';
+import { EmployeeDetailComponent } from './components/employee-detail-component/employee-detail-component';
 
 @NgModule({
   declarations: [
@@ -19,6 +21,7 @@ import { AutoInvalidFocusDirective } from '../../../shared/custom-directives/aut
     EmployeeFormComponent,
     AddEmployeeComponent,
     UpdateEmployeeFormComponent,
+    EmployeeDetailComponent,
   ],
   imports: [
     CommonModule,
@@ -29,6 +32,7 @@ import { AutoInvalidFocusDirective } from '../../../shared/custom-directives/aut
     OnlyNumericValueDirective,
     AutoFocusInputDirective,
     AutoInvalidFocusDirective,
+    BaseTableComponent,
   ],
 })
 export class EmployeeModule {}

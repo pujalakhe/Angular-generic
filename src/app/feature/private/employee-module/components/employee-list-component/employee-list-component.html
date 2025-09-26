@@ -12,3 +12,12 @@
 >
   Update Employee
 </button>
+
+<app-base-table-component
+  [columnsArray]="employeeColumns"
+  [tableData]="employees"
+  [showActions]="true"
+  [actions]="actions"
+  (actionClicked)="handleAction($event)"
+>
+</app-base-table-component>
