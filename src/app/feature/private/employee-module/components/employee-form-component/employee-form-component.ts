@@ -33,6 +33,21 @@ export class EmployeeFormComponent implements OnInit {
   get department() {
     return this.employeeForm?.get('department') as FormControl;
   }
+  get full_name(): FormControl {
+    return this.employeeForm?.get('name') as FormControl;
+  }
+
+  get role(): FormControl {
+    return this.employeeForm?.get('role') as FormControl;
+  }
+
+  get joiningDate(): FormControl {
+    return this.employeeForm?.get('joiningDate') as FormControl;
+  }
+
+  get salary(): FormControl {
+    return this.employeeForm?.get('salary') as FormControl;
+  }
   #buildForm() {
     this.employeeFormBuilderService.buildEmployeeForm(this.initialData);
   }

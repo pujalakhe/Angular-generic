@@ -1,1 +1,16 @@
-<p>input-text-component works!</p>
+@if(control){
+
+<mat-form-field class="w-full">
+  <mat-label>{{ label }}</mat-label>
+  <input
+    matInput
+    appAutoFocusInvalid
+    [formControl]="control"
+    [placeholder]="placeholder"
+    [type]="type"
+  />
+  @if(control.hasError('required')){
+  <mat-error> {{ label }} is required </mat-error>
+  }
+</mat-form-field>
+}
