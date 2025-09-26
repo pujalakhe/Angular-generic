@@ -11,6 +11,7 @@ export const ROUTE_PATHS = {
   SIGNUP: 'signup',
   ADD: 'add',
   UPDATE: 'update',
+  ATTENDANCE: 'attendance',
 };
 
 export const QUERY_PARAM = {
