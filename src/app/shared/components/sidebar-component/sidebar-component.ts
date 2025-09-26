@@ -19,6 +19,10 @@ export class SidebarComponent {
       icon: 'people',
       route: [ROUTE_PATHS.EMPLOYEE, ROUTE_PATHS.LIST],
     },
-    { label: 'Settings', icon: 'settings', route: '/settings' },
+    {
+      label: 'Attendance',
+      icon: 'fingerprint',
+      route: [ROUTE_PATHS.ATTENDANCE],
+    },
   ];
 }
