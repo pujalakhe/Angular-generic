@@ -19,6 +19,7 @@ import { ListWrapperComponent } from '../../../shared/components/list-wrapper-co
 import { PageHeaderWrapperComponent } from '../../../shared/components/page-header-wrapper-component/page-header-wrapper-component';
 import { LoadingComponent } from '../../../shared/components/loading-component/loading-component';
 import { ErrorComponent } from '../../../shared/components/error-component/error-component';
+import { NepaliCurrencyPipe } from '../../../shared/custom-pipe/nepali-currency-pipe';
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import { ErrorComponent } from '../../../shared/components/error-component/error
     PageHeaderWrapperComponent,
     LoadingComponent,
     ErrorComponent,
+    NepaliCurrencyPipe,
   ],
 })
 export class EmployeeModule {}
