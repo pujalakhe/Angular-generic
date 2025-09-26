@@ -17,6 +17,8 @@ import { EmployeeDetailComponent } from './components/employee-detail-component/
 import { HeaderComponent } from '../../../shared/components/header-component/header-component';
 import { ListWrapperComponent } from '../../../shared/components/list-wrapper-component/list-wrapper-component';
 import { PageHeaderWrapperComponent } from '../../../shared/components/page-header-wrapper-component/page-header-wrapper-component';
+import { LoadingComponent } from '../../../shared/components/loading-component/loading-component';
+import { ErrorComponent } from '../../../shared/components/error-component/error-component';
 
 @NgModule({
   declarations: [
@@ -39,6 +41,8 @@ import { PageHeaderWrapperComponent } from '../../../shared/components/page-head
     HeaderComponent,
     ListWrapperComponent,
     PageHeaderWrapperComponent,
+    LoadingComponent,
+    ErrorComponent,
   ],
 })
 export class EmployeeModule {}

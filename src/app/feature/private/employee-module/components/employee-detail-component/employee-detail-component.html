@@ -3,6 +3,11 @@
   @if(loading){
 
   <app-loading-component></app-loading-component>
+  } @if(error){
+
+  <app-error-component
+    [error]="'Failed to fetch the employee'"
+  ></app-error-component>
   }
   <!-- Employee Details -->
   @if(employee){

@@ -12,6 +12,7 @@ import { MOCK_EMPLOYEES } from '../../mock-employee';
 export class EmployeeDetailComponent implements OnInit {
   employee?: Employee;
   loading = false;
+  error = false;
 
   constructor(private route: ActivatedRoute) {}
 
