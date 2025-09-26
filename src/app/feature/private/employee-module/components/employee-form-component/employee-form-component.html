@@ -33,13 +33,12 @@
     ></app-input-text-component>
 
     <!-- salary -->
-    <mat-form-field class="w-full">
-      <mat-label>Salary</mat-label>
-      <input matInput formControlName="salary" appOnlyNumericValue />
-      <mat-error *ngIf="employeeForm?.get('salary')?.hasError('required')">
-        Salary is required
-      </mat-error>
-    </mat-form-field>
+    <app-input-number-component
+      [label]="'Salary'"
+      [placeholder]="'Enter salary'"
+      [control]="salary"
+      [min]="0"
+    ></app-input-number-component>
 
     <!-- Joining Date -->
     <app-input-date-component

@@ -1,1 +1,19 @@
-<p>input-number-component works!</p>
+@if(control){
+
+<mat-form-field class="w-full">
+  <mat-label>{{ label }}</mat-label>
+  <input
+    matInput
+    appOnlyNumericValue
+    type="text"
+    [formControl]="control"
+    [placeholder]="placeholder"
+    [attr.min]="min"
+  />
+  @if(control.hasError('required')){
+  <mat-error> {{ label }} is required </mat-error>
+  } @if(control.hasError('min')){
+  <mat-error> {{ label }} must be {{ min ?? "non-negative" }} </mat-error>
+  }
+</mat-form-field>
+}
