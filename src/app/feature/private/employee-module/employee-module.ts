@@ -15,6 +15,8 @@ import { AutoInvalidFocusDirective } from '../../../shared/custom-directives/aut
 import { BaseTableComponent } from '../../../shared/components/base-table-component/base-table-component';
 import { EmployeeDetailComponent } from './components/employee-detail-component/employee-detail-component';
 import { HeaderComponent } from '../../../shared/components/header-component/header-component';
+import { ListWrapperComponent } from '../../../shared/components/list-wrapper-component/list-wrapper-component';
+import { PageHeaderWrapperComponent } from '../../../shared/components/page-header-wrapper-component/page-header-wrapper-component';
 
 @NgModule({
   declarations: [
@@ -35,6 +37,8 @@ import { HeaderComponent } from '../../../shared/components/header-component/hea
     AutoInvalidFocusDirective,
     BaseTableComponent,
     HeaderComponent,
+    ListWrapperComponent,
+    PageHeaderWrapperComponent,
   ],
 })
 export class EmployeeModule {}

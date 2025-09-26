@@ -12,7 +12,8 @@ import { Router } from '@angular/router';
   styleUrl: './employee-list-component.scss',
 })
 export class EmployeeListComponent {
-  route = ROUTE_PATHS;
+  readonly ADD = ROUTE_PATHS.ADD;
+  readonly EMPLOYEE = ROUTE_PATHS.EMPLOYEE;
   employees: Employee[] = MOCK_EMPLOYEES;
 
   constructor(private router: Router) {}

@@ -1,17 +1,15 @@
-<app-header-component [header]="'Employee List'"></app-header-component>
-<button
-  mat-raised-button
-  color="primary"
-  [routerLink]="['/', route.EMPLOYEE, route.ADD]"
+<app-list-wrapper-component
+  [title]="'List of employees'"
+  [buttonLabel]="'Add Employee'"
+  [icon]="'add'"
+  [navigateTo]="['/', EMPLOYEE, ADD]"
 >
-  + Add Employee
-</button>
-
-<app-base-table-component
-  [columnsArray]="employeeColumns"
-  [tableData]="employees"
-  [showActions]="true"
-  [actions]="actions"
-  (actionClicked)="handleAction($event)"
->
-</app-base-table-component>
+  <app-base-table-component
+    [columnsArray]="employeeColumns"
+    [tableData]="employees"
+    [showActions]="true"
+    [actions]="actions"
+    (actionClicked)="handleAction($event)"
+  >
+  </app-base-table-component>
+</app-list-wrapper-component>
