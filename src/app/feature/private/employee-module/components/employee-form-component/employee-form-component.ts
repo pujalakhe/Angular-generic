@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Employee } from '../../model/employee-model';
-import { FormGroup } from '@angular/forms';
+import { FormControl, FormGroup } from '@angular/forms';
 import { EmployeeFormBuilderService } from '../../services/employee-form-builder-service';
 
 @Component({
@@ -18,12 +18,21 @@ export class EmployeeFormComponent implements OnInit {
 
   constructor(private employeeFormBuilderService: EmployeeFormBuilderService) {}
 
+  departmentOptions = [
+    { value: 'HR', label: 'Human Resources' },
+    { value: 'Finance', label: 'Finance' },
+    { value: 'IT', label: 'Information Technology' },
+    { value: 'Marketing', label: 'Marketing' },
+  ];
   ngOnInit(): void {
     this.#buildForm();
     this.employeeForm = this.employeeFormBuilderService.form;
     this.#disableOrEnableControls();
   }
 
+  get department() {
+    return this.employeeForm?.get('department') as FormControl;
+  }
   #buildForm() {
     this.employeeFormBuilderService.buildEmployeeForm(this.initialData);
   }

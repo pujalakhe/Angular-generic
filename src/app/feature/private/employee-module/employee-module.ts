@@ -20,6 +20,10 @@ import { PageHeaderWrapperComponent } from '../../../shared/components/page-head
 import { LoadingComponent } from '../../../shared/components/loading-component/loading-component';
 import { ErrorComponent } from '../../../shared/components/error-component/error-component';
 import { NepaliCurrencyPipe } from '../../../shared/custom-pipe/nepali-currency-pipe';
+import { InputSelectComponent } from '../../../shared/components/generic-inputs/input-select-component/input-select-component';
+import { InputDateComponent } from '../../../shared/components/generic-inputs/input-date-component/input-date-component';
+import { InputTextComponent } from '../../../shared/components/generic-inputs/input-text-component/input-text-component';
+import { InputNumberComponent } from '../../../shared/components/generic-inputs/input-number-component/input-number-component';
 
 @NgModule({
   declarations: [
@@ -45,6 +49,10 @@ import { NepaliCurrencyPipe } from '../../../shared/custom-pipe/nepali-currency-
     LoadingComponent,
     ErrorComponent,
     NepaliCurrencyPipe,
+    InputSelectComponent,
+    InputTextComponent,
+    InputDateComponent,
+    InputNumberComponent,
   ],
 })
 export class EmployeeModule {}
