@@ -1,4 +1,6 @@
-<app-employee-form-component
-  [mode]="'add'"
-  (formSubmit)="addEmployee($event)"
-></app-employee-form-component>
+<app-page-header-wrapper-component [title]="'Add Employee'">
+  <app-employee-form-component
+    [mode]="'add'"
+    (formSubmit)="addEmployee($event)"
+  ></app-employee-form-component>
+</app-page-header-wrapper-component>

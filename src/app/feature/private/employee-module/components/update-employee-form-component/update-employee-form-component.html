@@ -1,5 +1,7 @@
-<app-employee-form-component
-  [mode]="'edit'"
-  (formSubmit)="updateEmployee($event)"
-  [initialData]="employeeData"
-></app-employee-form-component>
+<app-page-header-wrapper-component [title]="'Update Employee'">
+  <app-employee-form-component
+    [mode]="'edit'"
+    (formSubmit)="updateEmployee($event)"
+    [initialData]="employeeData"
+  ></app-employee-form-component>
+</app-page-header-wrapper-component>
