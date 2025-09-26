@@ -13,7 +13,7 @@ const debounceMs = 300;
 })
 export class SearchComponent {
   @Input() placeholderText: string = 'item';
-  @Output() searchTerm: EventEmitter<string> = new EventEmitter<string>();
+  @Output() searchValue: EventEmitter<string> = new EventEmitter<string>();
 
   searchControl = new FormControl('');
 
@@ -29,7 +29,7 @@ export class SearchComponent {
         takeUntil(this.destroy$)
       )
       .subscribe((term) =>
-        this.searchTerm.emit(term?.trim().toLowerCase() ?? '')
+        this.searchValue.emit(term?.trim().toLowerCase() ?? '')
       );
   }
 
