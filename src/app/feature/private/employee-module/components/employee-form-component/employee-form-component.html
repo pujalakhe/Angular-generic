@@ -42,15 +42,11 @@
     </mat-form-field>
 
     <!-- Joining Date -->
-    <mat-form-field class="w-full">
-      <mat-label>Joining Date</mat-label>
-      <input matInput [matDatepicker]="picker" formControlName="joiningDate" />
-      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-      <mat-datepicker #picker></mat-datepicker>
-      <mat-error *ngIf="employeeForm?.get('joiningDate')?.hasError('required')">
-        Joining date is required
-      </mat-error>
-    </mat-form-field>
+    <app-input-date-component
+      [label]="'Joining Date'"
+      [placeholder]="'Pick joining Date'"
+      [control]="joiningDate"
+    ></app-input-date-component>
 
     <!-- Buttons -->
     <div class="flex justify-end space-x-4">
