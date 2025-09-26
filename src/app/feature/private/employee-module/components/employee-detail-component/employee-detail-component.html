@@ -1,1 +1,40 @@
-<p>employee-detail-component works!</p>
+<app-page-header-wrapper-component [title]="'Employee Detail'">
+  <!-- employee detail content -->
+  @if(loading){
+
+  <app-loading-component></app-loading-component>
+  }
+  <!-- Employee Details -->
+  @if(employee){
+  <mat-card class="p-6">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div>
+        <p class="font-medium">Name:</p>
+        <p>{{ employee.name }}</p>
+      </div>
+
+      <div>
+        <p class="font-medium">Department:</p>
+        <p>{{ employee.department }}</p>
+      </div>
+
+      <div>
+        <p class="font-medium">Role:</p>
+        <p>{{ employee.role }}</p>
+      </div>
+
+      <div>
+        <p class="font-medium">Salary:</p>
+        <p>{{ employee.salary | currency : "USD" }}</p>
+      </div>
+
+      <div class="md:col-span-2">
+        <p class="font-medium">Joining Date:</p>
+        <p>{{ employee.joiningDate | date }}</p>
+      </div>
+    </div>
+  </mat-card>
+  } @else{
+  <p class="text-center text-gray-500 mt-6">No employee details found.</p>
+  }
+</app-page-header-wrapper-component>

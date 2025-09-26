@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Employee } from '../../model/employee-model';
 import { ActivatedRoute } from '@angular/router';
 import { MOCK_EMPLOYEES } from '../../mock-employee';
@@ -17,10 +17,11 @@ import { MOCK_EMPLOYEES } from '../../mock-employee';
   templateUrl: './update-employee-form-component.html',
   styleUrl: './update-employee-form-component.scss',
 })
-export class UpdateEmployeeFormComponent {
+export class UpdateEmployeeFormComponent implements OnInit {
   employeeData?: Employee;
 
-  constructor(private route: ActivatedRoute) {
+  constructor(private route: ActivatedRoute) {}
+  ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('id');
     console.log(id);
     this.employeeData = MOCK_EMPLOYEES.find((emp) => emp.id === id);
