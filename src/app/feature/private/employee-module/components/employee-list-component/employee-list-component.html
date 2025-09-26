@@ -1,16 +1,10 @@
+<app-header-component [header]="'Employee List'"></app-header-component>
 <button
   mat-raised-button
   color="primary"
   [routerLink]="['/', route.EMPLOYEE, route.ADD]"
 >
   + Add Employee
-</button>
-<button
-  mat-raised-button
-  color="primary"
-  [routerLink]="['/', route.EMPLOYEE, route.UPDATE, '2']"
->
-  Update Employee
 </button>
 
 <app-base-table-component

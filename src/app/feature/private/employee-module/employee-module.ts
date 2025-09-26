@@ -14,6 +14,7 @@ import { AutoFocusInputDirective } from '../../../shared/custom-directives/auto-
 import { AutoInvalidFocusDirective } from '../../../shared/custom-directives/auto-invalid-focus-directive';
 import { BaseTableComponent } from '../../../shared/components/base-table-component/base-table-component';
 import { EmployeeDetailComponent } from './components/employee-detail-component/employee-detail-component';
+import { HeaderComponent } from '../../../shared/components/header-component/header-component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { EmployeeDetailComponent } from './components/employee-detail-component/
     AutoFocusInputDirective,
     AutoInvalidFocusDirective,
     BaseTableComponent,
+    HeaderComponent,
   ],
 })
 export class EmployeeModule {}

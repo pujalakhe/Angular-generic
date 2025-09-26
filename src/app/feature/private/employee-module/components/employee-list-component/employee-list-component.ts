@@ -3,6 +3,7 @@ import { ROUTE_PATHS } from '../../../../../core/constants/routes.constant';
 import { Employee } from '../../model/employee-model';
 import { MOCK_EMPLOYEES } from '../../mock-employee';
 import { TableColumn } from '../../../../../shared/model/table-column.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-employee-list-component',
@@ -13,6 +14,8 @@ import { TableColumn } from '../../../../../shared/model/table-column.model';
 export class EmployeeListComponent {
   route = ROUTE_PATHS;
   employees: Employee[] = MOCK_EMPLOYEES;
+
+  constructor(private router: Router) {}
 
   employeeColumns: TableColumn[] = [
     { key: 'name', label: 'Name' },
@@ -32,12 +35,23 @@ export class EmployeeListComponent {
 
     switch (event.type) {
       case 'view':
-        // this.router.navigate(['/employees', event.row._id]);
-
+        this.router.navigate([
+          ROUTE_PATHS.EMPLOYEE,
+          ROUTE_PATHS.DETAIL,
+          event.row.id,
+        ]);
         break;
+
       case 'edit':
+        console.log(event.row.id);
+        this.router.navigate([
+          ROUTE_PATHS.EMPLOYEE,
+          ROUTE_PATHS.UPDATE,
+          event.row.id,
+        ]);
         console.log('Edit', event.row);
         break;
+
       case 'delete':
         console.log('Delete', event.row);
         break;
