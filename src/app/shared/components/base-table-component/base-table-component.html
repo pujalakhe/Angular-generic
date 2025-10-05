@@ -58,8 +58,10 @@
   </table>
 
   @if (!(dataSource.data.length)) {
-  <div class="p-4 text-center text-gray-500">No records found.</div>
-  } @if(dataSource.data.length>5){
+  <ng-template>
+    <h2 class="p-4 text-center text-gray-500">No records found.</h2>
+  </ng-template>
+  } @if(dataSource.data.length>=5){
 
   <mat-paginator
     [pageSize]="5"
