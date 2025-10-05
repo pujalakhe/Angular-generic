@@ -27,3 +27,20 @@ export function enableControls(
     }
   });
 }
+export function resetControls(
+  form: FormGroup,
+  controls: string[] | string
+): void {
+  if (!form) return;
+
+  const controlNames = Array.isArray(controls) ? controls : [controls];
+
+  controlNames.forEach((name) => {
+    const control = form.get(name);
+    if (control) {
+      control.reset();
+    } else {
+      console.warn(`Control '${name}' not found in form.`);
+    }
+  });
+}
