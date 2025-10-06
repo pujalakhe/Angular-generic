@@ -13,11 +13,16 @@
   @if(control.hasError('required')){
   <mat-error>
     {{
-      "EMPLOYEE_FORM.INPUT_REQUIRED" | translate : { label: label | translate }
+      "FORM_ERRORS.INPUT_REQUIRED" | translate : { label: label | translate }
     }}
   </mat-error>
   } @if(control.hasError('min')){
-  <mat-error> {{ label }} must be {{ min ?? "non-negative" }} </mat-error>
+  <!-- <mat-error> Minimum {{ label }} is {{ min ?? "non-negative" }} </mat-error> -->
+  <mat-error>
+    {{
+      "FORM_ERRORS.MIN" | translate : { field: (label | translate), min: min }
+    }}
+  </mat-error>
   }
 </mat-form-field>
 }

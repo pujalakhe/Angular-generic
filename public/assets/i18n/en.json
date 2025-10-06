@@ -115,9 +115,12 @@
     "SALARY_PLACEHOLDER": "Enter Salary",
 
     "JOINING_DATE_LABEL": "Joining Date",
-    "JOINING_DATE_PLACEHOLDER": "Pick Joining Date",
+    "JOINING_DATE_PLACEHOLDER": "Pick Joining Date"
+  },
 
-    "INPUT_REQUIRED": "{{label}} is required."
+  "FORM_ERRORS": {
+    "INPUT_REQUIRED": "{{label}} is required.",
+    "MIN": "{{field}} must be at least {{min}}"
   },
 
   "ADD_EMPLOYEE": {

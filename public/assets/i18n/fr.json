@@ -73,6 +73,7 @@
     }
   },
   "S.N": "N°",
+
   "MOCK_EMPLOYEE": {
     "DEPARTMENT": {
       "ENGINEERING": "Ingénierie",
@@ -114,9 +115,12 @@
     "SALARY_PLACEHOLDER": "Entrez le salaire",
 
     "JOINING_DATE_LABEL": "Date d'entrée",
-    "JOINING_DATE_PLACEHOLDER": "Prendre date d'entrée",
+    "JOINING_DATE_PLACEHOLDER": "Prendre date d'entrée"
+  },
 
-    "INPUT_REQUIRED": "{{label}} est requis."
+  "FORM_ERRORS": {
+    "INPUT_REQUIRED": "{{label}} est requis.",
+    "MIN": "{{field}} doit être au moins {{min}}"
   },
 
   "ADD_EMPLOYEE": {

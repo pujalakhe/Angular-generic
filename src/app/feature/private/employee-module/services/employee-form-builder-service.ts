@@ -12,7 +12,10 @@ export class EmployeeFormBuilderService extends BaseFormService {
       name: [(config?.name ?? '').toString(), Validators.required],
       department: [(config?.department ?? '').toString(), Validators.required],
       role: [(config?.role ?? '').toString(), Validators.required],
-      salary: [(config?.salary ?? '').toString(), Validators.required],
+      salary: [
+        (config?.salary ?? '').toString(),
+        [Validators.required, Validators.min(100)],
+      ],
       joiningDate: [
         config?.joiningDate ? new Date(config.joiningDate) : null,
         Validators.required,
