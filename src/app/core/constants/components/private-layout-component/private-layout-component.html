@@ -6,7 +6,10 @@
   <div class="flex-1 flex flex-col">
     <header class="bg-white shadow h-16 flex items-center px-4 justify-between">
       <app-header-component [header]="header"></app-header-component>
-
+      <div class="flex gap-2">
+        <button (click)="switchLanguage('en')">EN</button>
+        <button (click)="switchLanguage('fr')">FR</button>
+      </div>
       <button
         class="md:hidden text-gray-700 focus:outline-none"
         (click)="toggleSidebar()"

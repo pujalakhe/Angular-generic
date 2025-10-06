@@ -14,6 +14,11 @@
   "QUERY_PARAM": {
     "ID": "id"
   },
+  "MENU": {
+    "DASHBOARD": "Tableau de bord",
+    "EMPLOYEES": "Employés",
+    "ATTENDANCE": "Présence"
+  },
   "icons": {
     "menu": "menu"
   },

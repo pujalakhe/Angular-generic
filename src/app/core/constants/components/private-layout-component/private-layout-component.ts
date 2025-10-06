@@ -4,23 +4,26 @@ import { RouterModule } from '@angular/router';
 import { SidebarComponent } from '../../../../shared/components/sidebar-component/sidebar-component';
 import { HeaderComponent } from '../../../../shared/components/header-component/header-component';
 import { MaterialModule } from '../../../../shared/material/material-module';
-import { TranslateService } from '@ngx-translate/core';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-private-layout-component',
-  imports: [RouterModule, MaterialModule, SidebarComponent, HeaderComponent],
+  imports: [
+    RouterModule,
+    MaterialModule,
+    SidebarComponent,
+    HeaderComponent,
+    TranslateModule,
+  ],
   templateUrl: './private-layout-component.html',
   styleUrl: './private-layout-component.scss',
 })
 export class PrivateLayoutComponent {
   isSidebarOpen = false;
   isMobile = false;
-  header = 'HR Management';
+  header = 'PRIVATE_LAYOUT.HEADER';
 
-  constructor(private translate: TranslateService) {
-    translate.addLangs(['en', 'fr']);
-    translate.setDefaultLang('en');
-  }
+  constructor(private translate: TranslateService) {}
 
   ngOnInit() {
     this.checkScreenSize();
@@ -41,5 +44,9 @@ export class PrivateLayoutComponent {
     }
   }
 
-  switchLanguage(lang: string) {}
+  switchLanguage(lang: string) {
+    console.log(lang);
+
+    this.translate.use(lang);
+  }
 }
