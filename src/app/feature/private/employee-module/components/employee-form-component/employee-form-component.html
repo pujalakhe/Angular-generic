@@ -10,8 +10,8 @@
   >
     <!-- Full Name -->
     <app-input-text-component
-      [label]="'Full Name'"
-      [placeholder]="'Enter Full Name'"
+      [label]="'EMPLOYEE_FORM.FULL_NAME_LABEL'"
+      [placeholder]="'EMPLOYEE_FORM.FULL_NAME_PLACEHOLDER'"
       [type]="'text'"
       [control]="full_name"
     ></app-input-text-component>
@@ -19,31 +19,31 @@
     <!-- Department -->
     <app-input-select-component
       [control]="department"
-      [placeholder]="'Choose department'"
+      [placeholder]="'EMPLOYEE_FORM.DEPARTMENT_PLACEHOLDER'"
       [options]="departmentOptions"
-      [label]="'Department'"
+      [label]="'EMPLOYEE_FORM.DEPARTMENT_LABEL'"
     ></app-input-select-component>
 
     <!-- Role -->
     <app-input-text-component
-      [label]="'Role'"
-      [placeholder]="'Enter Role'"
+      [label]="'EMPLOYEE_FORM.ROLE_LABEL'"
+      [placeholder]="'EMPLOYEE_FORM.ROLE_PLACEHOLDER'"
       [type]="'text'"
       [control]="role"
     ></app-input-text-component>
 
     <!-- salary -->
     <app-input-number-component
-      [label]="'Salary'"
-      [placeholder]="'Enter salary'"
+      [label]="'EMPLOYEE_FORM.SALARY_LABEL'"
+      [placeholder]="'EMPLOYEE_FORM.SALARY_PLACEHOLDER'"
       [control]="salary"
       [min]="0"
     ></app-input-number-component>
 
     <!-- Joining Date -->
     <app-input-date-component
-      [label]="'Joining Date'"
-      [placeholder]="'Pick joining Date'"
+      [label]="'EMPLOYEE_FORM.JOINING_DATE_LABEL'"
+      [placeholder]="'EMPLOYEE_FORM.JOINING_DATE_PLACEHOLDER'"
       [control]="joiningDate"
     ></app-input-date-component>
 

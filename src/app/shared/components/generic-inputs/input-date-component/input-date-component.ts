@@ -1,10 +1,11 @@
 import { Component, Input } from '@angular/core';
 import { MaterialModule } from '../../../material/material-module';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-input-date-component',
-  imports: [MaterialModule, ReactiveFormsModule],
+  imports: [MaterialModule, ReactiveFormsModule, TranslateModule],
   templateUrl: './input-date-component.html',
   styleUrl: './input-date-component.scss',
 })

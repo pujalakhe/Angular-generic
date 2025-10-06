@@ -94,12 +94,30 @@
     "RESET": "Reset",
     "SAVE": "Save",
     "UPDATE": "Update",
+
     "DEPARTMENT_OPTIONS": {
       "HR": "Human Resources",
       "FINANCE": "Finance",
       "IT": "Information Technology",
       "MARKETING": "Marketing"
-    }
+    },
+
+    "FULL_NAME_LABEL": "Full Name",
+    "FULL_NAME_PLACEHOLDER": "Enter Full Name",
+
+    "DEPARTMENT_LABEL": "Department",
+    "DEPARTMENT_PLACEHOLDER": "Choose department",
+
+    "ROLE_LABEL": "Role",
+    "ROLE_PLACEHOLDER": "Enter Role",
+
+    "SALARY_LABEL": "Salary",
+    "SALARY_PLACEHOLDER": "Enter Salary",
+
+    "JOINING_DATE_LABEL": "Joining Date",
+    "JOINING_DATE_PLACEHOLDER": "Pick Joining Date",
+
+    "INPUT_REQUIRED": "{{label}} is required."
   },
 
   "ADD_EMPLOYEE": {
