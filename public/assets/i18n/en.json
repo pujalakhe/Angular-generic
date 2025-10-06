@@ -1,0 +1,56 @@
+{
+  "ROUTE_PATHS": {
+    "DASHBOARD": "dashboard",
+    "USER": "user",
+    "EMPLOYEE": "employee",
+    "LIST": "list",
+    "DETAIL": "detail",
+    "LOGIN": "login",
+    "SIGN_UP": "signup",
+    "ADD": "add",
+    "UPDATE": "update",
+    "ATTENDANCE": "attendance"
+  },
+  "QUERY_PARAM": {
+    "ID": "id"
+  },
+  "icons": {
+    "menu": "menu"
+  },
+  "PRIVATE_LAYOUT": {
+    "HEADER": "HR Management"
+  },
+  "DASHBOARD": {
+    "HEADER": "Dashboard",
+    "TABLE": {
+      "COLUMNS": {
+        "NAME": "Name",
+        "DEPARTMENT": "Department",
+        "ROLE": "Role",
+        "JOINING_DATE": "Joining Date"
+      }
+    },
+    "CARDS": {
+      "EMPLOYEES": "Employees",
+      "DEPARTMENTS": "Departments",
+      "OPEN_POSITIONS": "Open Positions",
+      "PENDING_LEAVES": "Pending Leaves"
+    }
+  },
+  "EMPLOYEE_LIST": {
+    "TITLE": "List Of Employees",
+    "BUTTON_LABEL": "Add Employee",
+    "TABLE": {
+      "COLUMNS": {
+        "NAME": "Name",
+        "DEPARTMENT": "Department",
+        "ROLE": "Role"
+      }
+    },
+    "ACTIONS": {
+      "VIEW": "View",
+      "EDIT": "Edit",
+      "DELETE": "Delete"
+    }
+  }
+}
