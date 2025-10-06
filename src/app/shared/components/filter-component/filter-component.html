@@ -1,0 +1,25 @@
+<button matFab extended (click)="openModal()">
+  <!-- <mat-icon>filter_alt</mat-icon> -->
+  <mat-icon>tune</mat-icon>
+  Filter
+</button>
+
+<!-- Host container for modal -->
+@if(isModalOpen){
+
+<ng-container [ngTemplateOutlet]="modalTemplate"> </ng-container>
+}
+
+<ng-template #modalTemplate>
+  <div class="fixed inset-0 flex items-center justify-center bg-black/50">
+    <div class="bg-white p-6 rounded shadow-lg w-96">
+      <app-input-select-component
+        [label]="'Choose your filter value'"
+        [options]="filteredOptions"
+        [control]="filterValue"
+        (inputSelectChanged)="onCategorySelected($event)"
+      ></app-input-select-component>
+      <button (click)="closeModal()">Close</button>
+    </div>
+  </div>
+</ng-template>

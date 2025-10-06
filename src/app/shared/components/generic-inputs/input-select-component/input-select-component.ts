@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { MaterialModule } from '../../../material/material-module';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
 
@@ -12,5 +12,16 @@ export class InputSelectComponent {
   @Input({ required: true }) control?: FormControl;
   @Input({ required: true }) label: string = 'Select option';
   @Input({ required: true }) options: { value: string; label: string }[] = [];
-  @Input({ required: true }) placeholder: string = 'Please choose';
+  @Input() placeholder: string = 'Please choose';
+
+  @Output() inputSelectChanged: EventEmitter<string> =
+    new EventEmitter<string>();
+
+  ngOnInit() {
+    if (this.control) {
+      this.control.valueChanges.subscribe((value) => {
+        this.inputSelectChanged.emit(value);
+      });
+    }
+  }
 }

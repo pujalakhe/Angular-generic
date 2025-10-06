@@ -1,1 +1,7 @@
-<app-filter-component></app-filter-component>
+<app-filter-component
+  (filterChanged)="onCategoryChanged($event)"
+></app-filter-component>
+@if(filterVal){
+
+<p>Selected Filter Category:{{ filterVal }}</p>
+}
