@@ -1,5 +1,3 @@
-import { UPDATE } from '@ngrx/store';
-
 export const ROUTE_PATHS = {
   DASHBOARD: 'dashboard',
   USER: 'user',
@@ -7,7 +5,7 @@ export const ROUTE_PATHS = {
   LIST: 'list',
   DETAIL: 'detail',
   LOGIN: 'login',
-  SIGNUP: 'signup',
+  SIGN_UP: 'signup',
   ADD: 'add',
   UPDATE: 'update',
   ATTENDANCE: 'attendance',

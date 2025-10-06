@@ -9,6 +9,7 @@ import { TableColumn } from '../../../../../shared/model/table-column.model';
   styleUrl: './dashboard-home-component.scss',
 })
 export class DashboardHomeComponent {
+  headerText: string = 'Dashboard';
   loading: boolean = true;
   columns: TableColumn[] = [
     { key: 'name', label: 'Name' },

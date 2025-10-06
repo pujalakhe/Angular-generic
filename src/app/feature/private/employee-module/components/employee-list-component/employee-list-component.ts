@@ -14,6 +14,9 @@ import { Router } from '@angular/router';
 export class EmployeeListComponent {
   readonly ADD = ROUTE_PATHS.ADD;
   readonly EMPLOYEE = ROUTE_PATHS.EMPLOYEE;
+  readonly title: string = 'List Of Employees';
+  readonly buttonLabel: string = 'Add Employee';
+  readonly icon: string = 'add';
   employees: Employee[] = MOCK_EMPLOYEES;
 
   constructor(private router: Router) {}
