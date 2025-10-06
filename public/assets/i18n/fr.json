@@ -1,27 +1,10 @@
 {
-  "ROUTE_PATHS": {
-    "DASHBOARD": "tableau-de-bord",
-    "USER": "utilisateur",
-    "EMPLOYEE": "employe",
-    "LIST": "liste",
-    "DETAIL": "detail",
-    "LOGIN": "connexion",
-    "SIGN_UP": "inscription",
-    "ADD": "ajouter",
-    "UPDATE": "modifier",
-    "ATTENDANCE": "presence"
-  },
-  "QUERY_PARAM": {
-    "ID": "id"
-  },
   "MENU": {
     "DASHBOARD": "Tableau de bord",
     "EMPLOYEES": "Employés",
     "ATTENDANCE": "Présence"
   },
-  "icons": {
-    "menu": "menu"
-  },
+
   "PRIVATE_LAYOUT": {
     "HEADER": "Gestion des RH"
   },
