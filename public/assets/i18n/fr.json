@@ -1,0 +1,116 @@
+{
+  "MENU": {
+    "DASHBOARD": "Tableau de bord",
+    "EMPLOYEES": "Employés",
+    "ATTENDANCE": "Présence"
+  },
+
+  "PRIVATE_LAYOUT": {
+    "HEADER": "Gestion des RH"
+  },
+  "RECENT_EMPLOYEES": {
+    "DEPARTMENT": {
+      "ENGINEERING": "Ingénierie",
+      "HR": "RH",
+      "FINANCE": "Finance"
+    },
+    "ROLE": {
+      "FRONTEND_DEVELOPER": "Développeur Frontend",
+      "RECRUITER": "Recruteur",
+      "ACCOUNTANT": "Comptable"
+    }
+  },
+  "DASHBOARD": {
+    "HEADER": "Tableau de bord",
+    "TABLE": {
+      "COLUMNS": {
+        "NAME": "Nom",
+        "DEPARTMENT": "Département",
+        "ROLE": "Rôle",
+        "JOINING_DATE": "Date d'entrée"
+      }
+    },
+    "Error_MESSAGE": "No records found",
+    "CARDS": {
+      "EMPLOYEES": "Employés",
+      "DEPARTMENTS": "Départements",
+      "OPEN_POSITIONS": "Postes ouverts",
+      "PENDING_LEAVES": "Congés en attente"
+    }
+  },
+  "ACTIONS": "Actes",
+  "EMPLOYEE_LIST": {
+    "TITLE": "Liste des employés",
+    "BUTTON_LABEL": "Ajouter un employé",
+    "TABLE": {
+      "COLUMNS": {
+        "NAME": "Nom",
+        "DEPARTMENT": "Département",
+        "ROLE": "Rôle"
+      }
+    },
+    "ACTIONS": {
+      "VIEW": "Voir",
+      "EDIT": "Modifier",
+      "DELETE": "Supprimer"
+    }
+  },
+  "S.N": "N°",
+
+  "MOCK_EMPLOYEE": {
+    "DEPARTMENT": {
+      "ENGINEERING": "Ingénierie",
+      "HR": "RH",
+      "FINANCE": "Finance",
+      "MARKETING": "Marketing"
+    },
+    "ROLE": {
+      "SOFTWARE_DEVELOPER": "Développeur logiciel",
+      "HR_MANAGER": "Responsable RH",
+      "ACCOUNTANT": "Comptable",
+      "DIGITAL_MARKETING": "Spécialiste marketing digital",
+      "DEVOPS": "Ingénieur DevOps"
+    }
+  },
+  "NO_RECORD": "Aucun enregistrement trouvé.",
+
+  "EMPLOYEE_FORM": {
+    "RESET": "Réinitialiser",
+    "SAVE": "Enregistrer",
+    "UPDATE": "Mettre à jour",
+    "DEPARTMENT_OPTIONS": {
+      "HR": "Ressources Humaines",
+      "FINANCE": "Finance",
+      "IT": "Technologie de l'information",
+      "MARKETING": "Marketing"
+    },
+
+    "FULL_NAME_LABEL": "Nom complet",
+    "FULL_NAME_PLACEHOLDER": "Entrez le nom complet",
+
+    "DEPARTMENT_LABEL": "Département",
+    "DEPARTMENT_PLACEHOLDER": "Choisissez le département",
+
+    "ROLE_LABEL": "Rôle",
+    "ROLE_PLACEHOLDER": "Entrez le rôle",
+
+    "SALARY_LABEL": "Salaire",
+    "SALARY_PLACEHOLDER": "Entrez le salaire",
+
+    "JOINING_DATE_LABEL": "Date d'entrée",
+    "JOINING_DATE_PLACEHOLDER": "Prendre date d'entrée"
+  },
+
+  "FORM_ERRORS": {
+    "INPUT_REQUIRED": "{{label}} est requis.",
+    "MIN": "{{field}} doit être au moins {{min}}"
+  },
+
+  "ADD_EMPLOYEE": {
+    "TITLE": "Ajouter un employé"
+  },
+
+  "UPDATE_EMPLOYEE": {
+    "TITLE": "Mettre à jour l'employé"
+  }
+}

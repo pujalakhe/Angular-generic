@@ -1,0 +1,116 @@
+{
+  "MENU": {
+    "DASHBOARD": "Dashboard",
+    "EMPLOYEES": "Employees",
+    "ATTENDANCE": "Attendance"
+  },
+
+  "PRIVATE_LAYOUT": {
+    "HEADER": "HR Management"
+  },
+  "RECENT_EMPLOYEES": {
+    "DEPARTMENT": {
+      "ENGINEERING": "Engineering",
+      "HR": "HR",
+      "FINANCE": "Finance"
+    },
+    "ROLE": {
+      "FRONTEND_DEVELOPER": "Frontend Developer",
+      "RECRUITER": "Recruiter",
+      "ACCOUNTANT": "Accountant"
+    }
+  },
+  "DASHBOARD": {
+    "HEADER": "Dashboard",
+    "TABLE": {
+      "COLUMNS": {
+        "NAME": "Name",
+        "DEPARTMENT": "Department",
+        "ROLE": "Role",
+        "JOINING_DATE": "Joining Date"
+      }
+    },
+
+    "CARDS": {
+      "EMPLOYEES": "Employees",
+      "DEPARTMENTS": "Departments",
+      "OPEN_POSITIONS": "Open Positions",
+      "PENDING_LEAVES": "Pending Leaves"
+    }
+  },
+  "ACTIONS": "Actions",
+  "EMPLOYEE_LIST": {
+    "TITLE": "List Of Employees",
+    "BUTTON_LABEL": "Add Employee",
+    "TABLE": {
+      "COLUMNS": {
+        "NAME": "Name",
+        "DEPARTMENT": "Department",
+        "ROLE": "Role"
+      }
+    },
+    "ACTIONS": {
+      "VIEW": "View",
+      "EDIT": "Edit",
+      "DELETE": "Delete"
+    }
+  },
+
+  "MOCK_EMPLOYEE": {
+    "DEPARTMENT": {
+      "ENGINEERING": "Engineering",
+      "HR": "Human Resources",
+      "FINANCE": "Finance",
+      "MARKETING": "Marketing"
+    },
+    "ROLE": {
+      "SOFTWARE_DEVELOPER": "Software Developer",
+      "HR_MANAGER": "HR Manager",
+      "ACCOUNTANT": "Accountant",
+      "DIGITAL_MARKETING": "Digital Marketing Specialist",
+      "DEVOPS": "DevOps Engineer"
+    }
+  },
+  "NO_RECORD": "No records found.",
+
+  "EMPLOYEE_FORM": {
+    "RESET": "Reset",
+    "SAVE": "Save",
+    "UPDATE": "Update",
+
+    "DEPARTMENT_OPTIONS": {
+      "HR": "Human Resources",
+      "FINANCE": "Finance",
+      "IT": "Information Technology",
+      "MARKETING": "Marketing"
+    },
+
+    "FULL_NAME_LABEL": "Full Name",
+    "FULL_NAME_PLACEHOLDER": "Enter Full Name",
+
+    "DEPARTMENT_LABEL": "Department",
+    "DEPARTMENT_PLACEHOLDER": "Choose department",
+
+    "ROLE_LABEL": "Role",
+    "ROLE_PLACEHOLDER": "Enter Role",
+
+    "SALARY_LABEL": "Salary",
+    "SALARY_PLACEHOLDER": "Enter Salary",
+
+    "JOINING_DATE_LABEL": "Joining Date",
+    "JOINING_DATE_PLACEHOLDER": "Pick Joining Date"
+  },
+
+  "FORM_ERRORS": {
+    "INPUT_REQUIRED": "{{label}} is required.",
+    "MIN": "{{field}} must be at least {{min}}"
+  },
+
+  "ADD_EMPLOYEE": {
+    "TITLE": "Add Employee"
+  },
+
+  "UPDATE_EMPLOYEE": {
+    "TITLE": "Update Employee"
+  }
+}

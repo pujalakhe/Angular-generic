@@ -1,0 +1,18 @@
+<mat-form-field class="w-full" appearance="fill">
+  <mat-label>{{ label | translate }}</mat-label>
+
+  @if(control){
+  <mat-select [formControl]="control" [placeholder]="placeholder | translate">
+    @for (opt of options; track opt.value) {
+    <mat-option [value]="opt.value">
+      {{ opt.label | translate }}
+    </mat-option>
+    }
+  </mat-select>
+  } @if(control?.hasError('required')){
+  <mat-error>
+    {{
+      "FORM_ERRORS.INPUT_REQUIRED" | translate : { label: label | translate }
+    }} </mat-error
+  >}
+</mat-form-field>
