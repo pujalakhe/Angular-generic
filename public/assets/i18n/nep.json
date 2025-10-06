@@ -1,0 +1,120 @@
+{
+  "MENU": {
+    "DASHBOARD": "ड्यासबोर्ड",
+    "EMPLOYEES": "कर्मचारी",
+    "ATTENDANCE": "उपस्थिति"
+  },
+
+  "PRIVATE_LAYOUT": {
+    "HEADER": "एचआर व्यवस्थापन"
+  },
+
+  "RECENT_EMPLOYEES": {
+    "DEPARTMENT": {
+      "ENGINEERING": "इन्जिनियरिङ",
+      "HR": "मानव स्रोत",
+      "FINANCE": "वित्त"
+    },
+    "ROLE": {
+      "FRONTEND_DEVELOPER": "फ्रन्टएन्ड डेभलपर",
+      "RECRUITER": "भर्ना अधिकारी",
+      "ACCOUNTANT": "लेखापाल"
+    }
+  },
+
+  "DASHBOARD": {
+    "HEADER": "ड्यासबोर्ड",
+    "TABLE": {
+      "COLUMNS": {
+        "NAME": "नाम",
+        "DEPARTMENT": "विभाग",
+        "ROLE": "भूमिका",
+        "JOINING_DATE": "ज्वाइन गरेको मिति"
+      }
+    },
+    "CARDS": {
+      "EMPLOYEES": "कर्मचारी",
+      "DEPARTMENTS": "विभागहरू",
+      "OPEN_POSITIONS": "खुला पदहरू",
+      "PENDING_LEAVES": "बाकी बिदा"
+    }
+  },
+
+  "ACTIONS": "कार्यहरू",
+
+  "EMPLOYEE_LIST": {
+    "TITLE": "कर्मचारी सूची",
+    "BUTTON_LABEL": "कर्मचारी थप्नुहोस्",
+    "TABLE": {
+      "COLUMNS": {
+        "NAME": "नाम",
+        "DEPARTMENT": "विभाग",
+        "ROLE": "भूमिका"
+      }
+    },
+    "ACTIONS": {
+      "VIEW": "हेर्नुहोस्",
+      "EDIT": "सम्पादन गर्नुहोस्",
+      "DELETE": "हटाउनुहोस्"
+    }
+  },
+
+  "MOCK_EMPLOYEE": {
+    "DEPARTMENT": {
+      "ENGINEERING": "इन्जिनियरिङ",
+      "HR": "मानव स्रोत",
+      "FINANCE": "वित्त",
+      "MARKETING": "मार्केटिङ"
+    },
+    "ROLE": {
+      "SOFTWARE_DEVELOPER": "सफ्टवेयर डेभलपर",
+      "HR_MANAGER": "एचआर म्यानेजर",
+      "ACCOUNTANT": "लेखापाल",
+      "DIGITAL_MARKETING": "डिजिटल मार्केटिङ विशेषज्ञ",
+      "DEVOPS": "डेभओप्स इन्जिनियर"
+    }
+  },
+
+  "NO_RECORD": "रेकर्ड फेला परेन।",
+
+  "EMPLOYEE_FORM": {
+    "RESET": "रिसेट",
+    "SAVE": "सेभ गर्नुहोस्",
+    "UPDATE": "अपडेट गर्नुहोस्",
+
+    "DEPARTMENT_OPTIONS": {
+      "HR": "मानव स्रोत",
+      "FINANCE": "वित्त",
+      "IT": "सूचना प्रविधि",
+      "MARKETING": "मार्केटिङ"
+    },
+
+    "FULL_NAME_LABEL": "पूरा नाम",
+    "FULL_NAME_PLACEHOLDER": "पूरा नाम लेख्नुहोस्",
+
+    "DEPARTMENT_LABEL": "विभाग",
+    "DEPARTMENT_PLACEHOLDER": "विभाग चयन गर्नुहोस्",
+
+    "ROLE_LABEL": "भूमिका",
+    "ROLE_PLACEHOLDER": "भूमिका लेख्नुहोस्",
+
+    "SALARY_LABEL": "तलब",
+    "SALARY_PLACEHOLDER": "तलब लेख्नुहोस्",
+
+    "JOINING_DATE_LABEL": "ज्वाइन मिति",
+    "JOINING_DATE_PLACEHOLDER": "ज्वाइन मिति चयन गर्नुहोस्"
+  },
+
+  "FORM_ERRORS": {
+    "INPUT_REQUIRED": "{{label}} आवश्यक छ।",
+    "MIN": "{{field}} कम्तिमा {{min}} हुनुपर्छ।"
+  },
+
+  "ADD_EMPLOYEE": {
+    "TITLE": "कर्मचारी थप्नुहोस्"
+  },
+
+  "UPDATE_EMPLOYEE": {
+    "TITLE": "कर्मचारी अपडेट गर्नुहोस्"
+  }
+}

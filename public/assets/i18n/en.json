@@ -1,27 +1,10 @@
 {
-  "ROUTE_PATHS": {
-    "DASHBOARD": "dashboard",
-    "USER": "user",
-    "EMPLOYEE": "employee",
-    "LIST": "list",
-    "DETAIL": "detail",
-    "LOGIN": "login",
-    "SIGN_UP": "signup",
-    "ADD": "add",
-    "UPDATE": "update",
-    "ATTENDANCE": "attendance"
-  },
-  "QUERY_PARAM": {
-    "ID": "id"
-  },
   "MENU": {
     "DASHBOARD": "Dashboard",
     "EMPLOYEES": "Employees",
     "ATTENDANCE": "Attendance"
   },
-  "icons": {
-    "menu": "menu"
-  },
+
   "PRIVATE_LAYOUT": {
     "HEADER": "HR Management"
   },
