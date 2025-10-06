@@ -30,7 +30,7 @@ const routes: Routes = [
           ),
       },
       {
-        path: '',
+        path: ROUTE_PATHS.ATTENDANCE,
         loadChildren: () =>
           import('./feature/private/attendance-module/attendance-module').then(
             (m) => m.AttendanceModule

@@ -22,7 +22,7 @@ export class SidebarComponent {
     {
       label: 'Attendance',
       icon: 'fingerprint',
-      route: [ROUTE_PATHS.ATTENDANCE],
+      route: ROUTE_PATHS.ATTENDANCE,
     },
   ];
 }

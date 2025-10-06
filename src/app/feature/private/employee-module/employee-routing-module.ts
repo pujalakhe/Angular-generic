@@ -5,7 +5,6 @@ import {
   ROUTE_PATHS,
 } from '../../../core/constants/routes.constant';
 import { EmployeeListComponent } from './components/employee-list-component/employee-list-component';
-import { EmployeeFormComponent } from './components/employee-form-component/employee-form-component';
 import { AddEmployeeComponent } from './components/add-employee-component/add-employee-component';
 import { UpdateEmployeeFormComponent } from './components/update-employee-form-component/update-employee-form-component';
 import { EmployeeDetailComponent } from './components/employee-detail-component/employee-detail-component';
