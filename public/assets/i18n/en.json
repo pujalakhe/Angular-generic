@@ -88,5 +88,25 @@
       "DEVOPS": "DevOps Engineer"
     }
   },
-  "NO_RECORD": "No records found."
+  "NO_RECORD": "No records found.",
+
+  "EMPLOYEE_FORM": {
+    "RESET": "Reset",
+    "SAVE": "Save",
+    "UPDATE": "Update",
+    "DEPARTMENT_OPTIONS": {
+      "HR": "Human Resources",
+      "FINANCE": "Finance",
+      "IT": "Information Technology",
+      "MARKETING": "Marketing"
+    }
+  },
+
+  "ADD_EMPLOYEE": {
+    "TITLE": "Add Employee"
+  },
+
+  "UPDATE_EMPLOYEE": {
+    "TITLE": "Update Employee"
+  }
 }

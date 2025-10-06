@@ -24,6 +24,7 @@ import { InputSelectComponent } from '../../../shared/components/generic-inputs/
 import { InputDateComponent } from '../../../shared/components/generic-inputs/input-date-component/input-date-component';
 import { InputTextComponent } from '../../../shared/components/generic-inputs/input-text-component/input-text-component';
 import { InputNumberComponent } from '../../../shared/components/generic-inputs/input-number-component/input-number-component';
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
   declarations: [
@@ -53,6 +54,7 @@ import { InputNumberComponent } from '../../../shared/components/generic-inputs/
     InputTextComponent,
     InputDateComponent,
     InputNumberComponent,
+    TranslateModule,
   ],
 })
 export class EmployeeModule {}

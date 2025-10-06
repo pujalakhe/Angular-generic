@@ -52,12 +52,12 @@
       @if(mode==='add'){
 
       <button mat-stroked-button color="warn" type="button" (click)="onReset()">
-        Reset
+        {{ reset | translate }}
       </button>
 
       }
       <button mat-raised-button color="primary" type="submit">
-        {{ mode === "add" ? "Save" : "Update" }}
+        {{ (mode === "add" ? save : update) | translate }}
       </button>
     </div>
   </form>

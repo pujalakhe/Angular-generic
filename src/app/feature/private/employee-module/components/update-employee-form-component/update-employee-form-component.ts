@@ -19,6 +19,7 @@ import { MOCK_EMPLOYEES } from '../../mock-employee';
 })
 export class UpdateEmployeeFormComponent implements OnInit {
   employeeData?: Employee;
+  label = 'UPDATE_EMPLOYEE.TITLE';
 
   constructor(private route: ActivatedRoute) {}
   ngOnInit(): void {

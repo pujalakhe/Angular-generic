@@ -3,6 +3,7 @@ import { Employee } from '../../model/employee-model';
 import { FormControl, FormGroup } from '@angular/forms';
 import { EmployeeFormBuilderService } from '../../services/employee-form-builder-service';
 
+const EMP_FORM = 'EMPLOYEE_FORM';
 @Component({
   selector: 'app-employee-form-component',
   standalone: false,
@@ -18,11 +19,15 @@ export class EmployeeFormComponent implements OnInit {
 
   constructor(private employeeFormBuilderService: EmployeeFormBuilderService) {}
 
+  reset = `${EMP_FORM}.RESET`;
+  save = `${EMP_FORM}.SAVE`;
+  update = `${EMP_FORM}.UPDATE`;
+
   departmentOptions = [
-    { value: 'HR', label: 'Human Resources' },
-    { value: 'Finance', label: 'Finance' },
-    { value: 'IT', label: 'Information Technology' },
-    { value: 'Marketing', label: 'Marketing' },
+    { value: 'HR', label: 'EMPLOYEE_FORM.DEPARTMENT_OPTIONS.HR' },
+    { value: 'Finance', label: 'EMPLOYEE_FORM.DEPARTMENT_OPTIONS.FINANCE' },
+    { value: 'IT', label: 'EMPLOYEE_FORM.DEPARTMENT_OPTIONS.IT' },
+    { value: 'Marketing', label: 'EMPLOYEE_FORM.DEPARTMENT_OPTIONS.MARKETING' },
   ];
   ngOnInit(): void {
     this.#buildForm();

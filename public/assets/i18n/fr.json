@@ -88,5 +88,25 @@
       "DEVOPS": "Ingénieur DevOps"
     }
   },
-  "NO_RECORD": "Aucun enregistrement trouvé."
+  "NO_RECORD": "Aucun enregistrement trouvé.",
+
+  "EMPLOYEE_FORM": {
+    "RESET": "Réinitialiser",
+    "SAVE": "Enregistrer",
+    "UPDATE": "Mettre à jour",
+    "DEPARTMENT_OPTIONS": {
+      "HR": "Ressources Humaines",
+      "FINANCE": "Finance",
+      "IT": "Technologie de l'information",
+      "MARKETING": "Marketing"
+    }
+  },
+
+  "ADD_EMPLOYEE": {
+    "TITLE": "Ajouter un employé"
+  },
+
+  "UPDATE_EMPLOYEE": {
+    "TITLE": "Mettre à jour l'employé"
+  }
 }

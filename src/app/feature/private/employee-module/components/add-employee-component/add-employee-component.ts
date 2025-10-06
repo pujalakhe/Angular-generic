@@ -8,6 +8,7 @@ import { Employee } from '../../model/employee-model';
   styleUrl: './add-employee-component.scss',
 })
 export class AddEmployeeComponent {
+  label = 'ADD_EMPLOYEE.TITLE';
   addEmployee(employee: Employee) {
     console.log('Add:', employee);
     // call create API
