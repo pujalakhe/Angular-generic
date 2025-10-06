@@ -8,6 +8,7 @@ import { HeaderComponent } from '../../../shared/components/header-component/hea
 import { BaseTableComponent } from '../../../shared/components/base-table-component/base-table-component';
 import { LoadingComponent } from '../../../shared/components/loading-component/loading-component';
 import { ErrorComponent } from '../../../shared/components/error-component/error-component';
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
   declarations: [DashboardHomeComponent],
@@ -20,6 +21,7 @@ import { ErrorComponent } from '../../../shared/components/error-component/error
     BaseTableComponent,
     LoadingComponent,
     ErrorComponent,
+    TranslateModule,
   ],
 })
 export class DashboardModule {}

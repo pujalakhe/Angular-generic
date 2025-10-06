@@ -17,7 +17,7 @@
     @for (column of columnsArray; track $index) {
     <ng-container [matColumnDef]="column.key">
       <th mat-header-cell *matHeaderCellDef>
-        {{ column.label | titlecase }}
+        {{ column.label | titlecase | translate }}
       </th>
       <td mat-cell *matCellDef="let element">
         {{ getCellValue(element, column) }}
@@ -44,7 +44,7 @@
             class="!text-xs !min-w-0 !px-3 !py-1 !h-8"
             (click)="onAction(action.type, row)"
           >
-            {{ action.label }}
+            {{ action.label | translate }}
           </button>
           }
         </div>

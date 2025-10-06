@@ -14,10 +14,11 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { CommonModule } from '@angular/common';
 import { Employee } from '../../../feature/private/employee-module/model/employee-model';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-base-table-component',
-  imports: [CommonModule, MaterialModule],
+  imports: [CommonModule, MaterialModule, TranslateModule],
   templateUrl: './base-table-component.html',
   styleUrl: './base-table-component.scss',
 })

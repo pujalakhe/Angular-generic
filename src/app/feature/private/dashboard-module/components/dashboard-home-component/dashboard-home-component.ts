@@ -9,7 +9,7 @@ import { TableColumn } from '../../../../../shared/model/table-column.model';
   styleUrl: './dashboard-home-component.scss',
 })
 export class DashboardHomeComponent {
-  headerText: string = 'Dashboard';
+  headerText: string = 'DASHBOARD.HEADER';
   loading: boolean = true;
   columns: TableColumn[] = [
     { key: 'name', label: 'Name' },
@@ -19,16 +19,26 @@ export class DashboardHomeComponent {
   ];
   // Summary cards
   cards: Card[] = [
-    { title: 'Employees', value: 120, icon: 'person', color: 'bg-blue-500' },
     {
-      title: 'Departments',
+      title: 'DASHBOARD.CARDS.EMPLOYEES',
+      value: 120,
+      icon: 'person',
+      color: 'bg-blue-500',
+    },
+    {
+      title: 'DASHBOARD.CARDS.DEPARTMENTS',
       value: 8,
       icon: 'apartment',
       color: 'bg-green-500',
     },
-    { title: 'Open Positions', value: 5, icon: 'work', color: 'bg-yellow-500' },
     {
-      title: 'Pending Leaves',
+      title: 'DASHBOARD.CARDS.OPEN_POSITIONS',
+      value: 5,
+      icon: 'work',
+      color: 'bg-yellow-500',
+    },
+    {
+      title: 'DASHBOARD.CARDS.PENDING_LEAVES',
       value: 12,
       icon: 'event_busy',
       color: 'bg-red-500',

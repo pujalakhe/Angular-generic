@@ -35,6 +35,7 @@
         "JOINING_DATE": "Date d'entrée"
       }
     },
+    "Error_MESSAGE": "No records found",
     "CARDS": {
       "EMPLOYEES": "Employés",
       "DEPARTMENTS": "Départements",
