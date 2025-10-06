@@ -25,6 +25,18 @@
   "PRIVATE_LAYOUT": {
     "HEADER": "HR Management"
   },
+  "RECENT_EMPLOYEES": {
+    "DEPARTMENT": {
+      "ENGINEERING": "Engineering",
+      "HR": "HR",
+      "FINANCE": "Finance"
+    },
+    "ROLE": {
+      "FRONTEND_DEVELOPER": "Frontend Developer",
+      "RECRUITER": "Recruiter",
+      "ACCOUNTANT": "Accountant"
+    }
+  },
   "DASHBOARD": {
     "HEADER": "Dashboard",
     "TABLE": {
@@ -35,6 +47,7 @@
         "JOINING_DATE": "Joining Date"
       }
     },
+
     "CARDS": {
       "EMPLOYEES": "Employees",
       "DEPARTMENTS": "Departments",
@@ -42,6 +55,7 @@
       "PENDING_LEAVES": "Pending Leaves"
     }
   },
+  "ACTIONS": "Actions",
   "EMPLOYEE_LIST": {
     "TITLE": "List Of Employees",
     "BUTTON_LABEL": "Add Employee",
@@ -57,5 +71,22 @@
       "EDIT": "Edit",
       "DELETE": "Delete"
     }
-  }
+  },
+
+  "MOCK_EMPLOYEE": {
+    "DEPARTMENT": {
+      "ENGINEERING": "Engineering",
+      "HR": "Human Resources",
+      "FINANCE": "Finance",
+      "MARKETING": "Marketing"
+    },
+    "ROLE": {
+      "SOFTWARE_DEVELOPER": "Software Developer",
+      "HR_MANAGER": "HR Manager",
+      "ACCOUNTANT": "Accountant",
+      "DIGITAL_MARKETING": "Digital Marketing Specialist",
+      "DEVOPS": "DevOps Engineer"
+    }
+  },
+  "NO_RECORD": "No records found."
 }

@@ -12,10 +12,10 @@ export class DashboardHomeComponent {
   headerText: string = 'DASHBOARD.HEADER';
   loading: boolean = true;
   columns: TableColumn[] = [
-    { key: 'name', label: 'Name' },
-    { key: 'department', label: 'Department' },
-    { key: 'role', label: 'Role' },
-    { key: 'joiningDate', label: 'Joining Date' },
+    { key: 'name', label: 'DASHBOARD.TABLE.COLUMNS.NAME' },
+    { key: 'department', label: 'DASHBOARD.TABLE.COLUMNS.DEPARTMENT' },
+    { key: 'role', label: 'DASHBOARD.TABLE.COLUMNS.ROLE' },
+    { key: 'joiningDate', label: 'DASHBOARD.TABLE.COLUMNS.JOINING_DATE' },
   ];
   // Summary cards
   cards: Card[] = [
@@ -49,20 +49,20 @@ export class DashboardHomeComponent {
   recentEmployees = [
     {
       name: 'John Doe',
-      department: 'Engineering',
-      role: 'Frontend Developer',
+      department: 'RECENT_EMPLOYEES.DEPARTMENT.ENGINEERING',
+      role: 'RECENT_EMPLOYEES.ROLE.FRONTEND_DEVELOPER',
       joiningDate: '2025-08-01',
     },
     {
       name: 'Jane Smith',
-      department: 'HR',
-      role: 'Recruiter',
+      department: 'RECENT_EMPLOYEES.DEPARTMENT.HR',
+      role: 'RECENT_EMPLOYEES.ROLE.RECRUITER',
       joiningDate: '2025-07-15',
     },
     {
       name: 'Mike Johnson',
-      department: 'Finance',
-      role: 'Accountant',
+      department: 'RECENT_EMPLOYEES.DEPARTMENT.FINANCE',
+      role: 'RECENT_EMPLOYEES.ROLE.ACCOUNTANT',
       joiningDate: '2025-06-20',
     },
   ];

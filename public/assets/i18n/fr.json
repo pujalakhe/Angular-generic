@@ -25,6 +25,18 @@
   "PRIVATE_LAYOUT": {
     "HEADER": "Gestion des RH"
   },
+  "RECENT_EMPLOYEES": {
+    "DEPARTMENT": {
+      "ENGINEERING": "Ingénierie",
+      "HR": "RH",
+      "FINANCE": "Finance"
+    },
+    "ROLE": {
+      "FRONTEND_DEVELOPER": "Développeur Frontend",
+      "RECRUITER": "Recruteur",
+      "ACCOUNTANT": "Comptable"
+    }
+  },
   "DASHBOARD": {
     "HEADER": "Tableau de bord",
     "TABLE": {
@@ -43,6 +55,7 @@
       "PENDING_LEAVES": "Congés en attente"
     }
   },
+  "ACTIONS": "Actes",
   "EMPLOYEE_LIST": {
     "TITLE": "Liste des employés",
     "BUTTON_LABEL": "Ajouter un employé",
@@ -58,5 +71,22 @@
       "EDIT": "Modifier",
       "DELETE": "Supprimer"
     }
-  }
+  },
+  "S.N": "N°",
+  "MOCK_EMPLOYEE": {
+    "DEPARTMENT": {
+      "ENGINEERING": "Ingénierie",
+      "HR": "RH",
+      "FINANCE": "Finance",
+      "MARKETING": "Marketing"
+    },
+    "ROLE": {
+      "SOFTWARE_DEVELOPER": "Développeur logiciel",
+      "HR_MANAGER": "Responsable RH",
+      "ACCOUNTANT": "Comptable",
+      "DIGITAL_MARKETING": "Spécialiste marketing digital",
+      "DEVOPS": "Ingénieur DevOps"
+    }
+  },
+  "NO_RECORD": "Aucun enregistrement trouvé."
 }

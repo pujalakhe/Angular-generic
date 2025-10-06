@@ -2,7 +2,7 @@
   <table mat-table [dataSource]="dataSource" class="full-width-table">
     <!-- Serial Number Column -->
     <ng-container matColumnDef="sn">
-      <th mat-header-cell *matHeaderCellDef>S.N</th>
+      <th mat-header-cell *matHeaderCellDef>{{ SnLabel | translate }}</th>
       <td mat-cell *matCellDef="let element; let i = index">
         {{
           i +
@@ -17,10 +17,10 @@
     @for (column of columnsArray; track $index) {
     <ng-container [matColumnDef]="column.key">
       <th mat-header-cell *matHeaderCellDef>
-        {{ column.label | titlecase | translate }}
+        {{ column.label | translate | titlecase }}
       </th>
       <td mat-cell *matCellDef="let element">
-        {{ getCellValue(element, column) }}
+        {{ getCellValue(element, column) | translate }}
       </td>
     </ng-container>
     }
@@ -33,7 +33,7 @@
         *matHeaderCellDef
         class="px-4 py-3 font-semibold text-gray-700 border-b bg-gray-50 text-center w-48"
       >
-        ACTIONS
+        {{ actionLabel | translate }}
       </th>
       <td mat-cell *matCellDef="let row" class="px-4 py-3 border-b w-48">
         <div class="flex justify-center items-center gap-2">
@@ -58,9 +58,9 @@
   </table>
 
   @if (!(dataSource.data.length)) {
-  <ng-template>
-    <h2 class="p-4 text-center text-gray-500">No records found.</h2>
-  </ng-template>
+  <div>
+    <h2 class="p-4 text-center text-gray-500">{{ noRecord | translate }}</h2>
+  </div>
   } @if(dataSource.data.length>=5){
 
   <mat-paginator

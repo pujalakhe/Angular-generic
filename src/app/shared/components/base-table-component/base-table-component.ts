@@ -13,7 +13,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { CommonModule } from '@angular/common';
-import { Employee } from '../../../feature/private/employee-module/model/employee-model';
+
 import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
@@ -28,9 +28,13 @@ export class BaseTableComponent<T> implements OnInit, AfterViewInit {
   @Input() showActions = false;
   @Input() actions: { type: string; label: string; color?: string }[] = [];
 
-  @Output() actionClicked = new EventEmitter<{ type: string; row: Employee }>();
+  @Output() actionClicked = new EventEmitter<{ type: string; row: T }>();
 
   dataSource: MatTableDataSource<T> = new MatTableDataSource();
+
+  actionLabel: string = 'ACTIONS';
+  SnLabel: string = 'S.N';
+  noRecord: string = 'NO_RECORD';
 
   @ViewChild(MatPaginator) paginator?: MatPaginator;
   @ViewChild(MatSort) sort?: MatSort;
@@ -64,7 +68,7 @@ export class BaseTableComponent<T> implements OnInit, AfterViewInit {
     this.dataSource.sort = this.sort;
   }
 
-  onAction(type: string, row: Employee) {
+  onAction(type: string, row: T) {
     this.actionClicked.emit({ type, row });
   }
 }
