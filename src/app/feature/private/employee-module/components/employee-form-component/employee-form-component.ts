@@ -2,6 +2,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Employee } from '../../model/employee-model';
 import { FormControl, FormGroup } from '@angular/forms';
 import { EmployeeFormBuilderService } from '../../services/employee-form-builder-service';
+import { CanComponentDeactivate } from '../../../../../core/guards/unsaved-changes-guard';
 
 const EMP_FORM = 'EMPLOYEE_FORM';
 @Component({
@@ -78,5 +79,12 @@ export class EmployeeFormComponent implements OnInit {
 
   onReset() {
     this.employeeFormBuilderService.reset();
+  }
+
+  canDeactivate(): boolean {
+    if (this.employeeForm?.dirty) {
+      return confirm('You have unsaved changes. Leave anyway?');
+    }
+    return true;
   }
 }

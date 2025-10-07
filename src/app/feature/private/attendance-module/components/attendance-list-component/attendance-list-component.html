@@ -5,3 +5,40 @@
 
 <p>Selected Filter Category:{{ filterVal }}</p>
 }
+
+<!-- <h3>Without trackBy</h3>
+<ul>
+  @for (emp of employees; track $index) {
+
+  <li>{{ $index + 1 }}. {{ emp.name }}</li>
+  }
+</ul>
+
+<button (click)="shuffleAndUpdate()">Shuffle & Update</button>
+
+<h3>With trackBy</h3>
+<ul>
+  @for (emp of employees; track emp.id ;let idx=$index) {
+
+  <li>{{ $index + 1 }}. {{ emp.name }}</li>
+  }
+</ul>
+
+<button (click)="shuffleAndUpdate()">Shuffle & Update</button> -->
+
+<h3>Without trackBy</h3>
+<ul>
+  <li *ngFor="let emp of employees; let i = index">
+    {{ i + 1 }}. {{ emp.name }}
+  </li>
+</ul>
+
+<button (click)="shuffleAndUpdate()">Shuffle & Update</button>
+
+<h3>With trackBy</h3>
+<ul>
+  <li *ngFor="let emp of employees; let i = index; trackBy: trackByEmployeeId">
+    {{ i + 1 }}. {{ emp.name }}
+  </li>
+</ul>
+<button (click)="shuffleAndUpdate()">Shuffle & Update</button>
