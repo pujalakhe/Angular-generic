@@ -1,9 +1,8 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { Employee } from '../../model/employee-model';
 import { FormControl, FormGroup } from '@angular/forms';
+
+import { Employee } from '../../model/employee-model';
 import { EmployeeFormBuilderService } from '../../services/employee-form-builder-service';
-import { CanComponentDeactivate } from '../../../../../core/guards/unsaved-changes-guard';
-import { LeavePageConfirmationDialogComponent } from '../../../../../shared/components/leave-page-confirmation-dialog-component/leave-page-confirmation-dialog-component';
 import { MatDialog } from '@angular/material/dialog';
 import { confirmUnsavedChanges } from '../../../../../core/utils/form.utils';
 
