@@ -3,6 +3,9 @@ import { Employee } from '../../model/employee-model';
 import { FormControl, FormGroup } from '@angular/forms';
 import { EmployeeFormBuilderService } from '../../services/employee-form-builder-service';
 import { CanComponentDeactivate } from '../../../../../core/guards/unsaved-changes-guard';
+import { LeavePageConfirmationDialogComponent } from '../../../../../shared/components/leave-page-confirmation-dialog-component/leave-page-confirmation-dialog-component';
+import { MatDialog } from '@angular/material/dialog';
+import { confirmUnsavedChanges } from '../../../../../core/utils/form.utils';
 
 const EMP_FORM = 'EMPLOYEE_FORM';
 @Component({
@@ -18,7 +21,10 @@ export class EmployeeFormComponent implements OnInit {
 
   employeeForm?: FormGroup;
 
-  constructor(private employeeFormBuilderService: EmployeeFormBuilderService) {}
+  constructor(
+    private employeeFormBuilderService: EmployeeFormBuilderService,
+    private dialog: MatDialog
+  ) {}
 
   reset = `${EMP_FORM}.RESET`;
   save = `${EMP_FORM}.SAVE`;
@@ -81,10 +87,19 @@ export class EmployeeFormComponent implements OnInit {
     this.employeeFormBuilderService.reset();
   }
 
-  canDeactivate(): boolean {
-    if (this.employeeForm?.dirty) {
-      return confirm('You have unsaved changes. Leave anyway?');
-    }
-    return true;
+  canDeactivate(): Promise<boolean> | boolean {
+    return confirmUnsavedChanges(
+      this.employeeForm?.dirty ?? false, //checks if the form is dirty.default value is false
+      this.dialog
+    );
   }
 }
+
+// canDeactivate(): Promise<boolean> | boolean {
+//   return confirmUnsavedChanges(
+//     this.employeeForm?.dirty ?? false, //checks if the form is dirty.default value is false
+//     this.dialog,
+//     'Hey, fill it before leaving!'
+//   );
+// }
+// Without passing this.dialog, the util function has no way to open the confirmation dialog.

@@ -37,7 +37,7 @@ export class UpdateEmployeeFormComponent implements OnInit {
   // @ViewChild here because your AddEmployeeComponent doesn’t directly have the form itself; it contains the EmployeeFormComponent as a child:
   // Without @ViewChild, the parent (AddEmployeeComponent) has no way to know the child’s form state.
 
-  canDeactivate(): boolean {
+  canDeactivate(): boolean | Promise<Boolean> {
     return this.employeeFormComponent?.canDeactivate() ?? true;
   }
 }
