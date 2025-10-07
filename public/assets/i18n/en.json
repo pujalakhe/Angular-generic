@@ -27,7 +27,8 @@
         "NAME": "Name",
         "DEPARTMENT": "Department",
         "ROLE": "Role",
-        "JOINING_DATE": "Joining Date"
+        "JOINING_DATE": "Joining Date",
+        "SALARY": "Salary"
       }
     },
 
@@ -112,5 +113,9 @@
 
   "UPDATE_EMPLOYEE": {
     "TITLE": "Update Employee"
+  },
+
+  "EMPLOYEE_DETAIL": {
+    "TITLE": "Employee Detail"
   }
 }

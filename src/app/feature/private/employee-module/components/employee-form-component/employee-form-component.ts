@@ -53,6 +53,7 @@ export class EmployeeFormComponent implements OnInit {
   get salary(): FormControl {
     return this.employeeForm?.get('salary') as FormControl;
   }
+
   #buildForm() {
     this.employeeFormBuilderService.buildEmployeeForm(this.initialData);
   }

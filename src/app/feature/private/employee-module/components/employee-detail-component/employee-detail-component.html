@@ -1,4 +1,4 @@
-<app-page-header-wrapper-component [title]="'Employee Detail'">
+<app-page-header-wrapper-component [title]="'EMPLOYEE_DETAIL.TITLE'">
   <!-- employee detail content -->
   @if(loading){
 
@@ -14,27 +14,37 @@
   <mat-card class="p-6">
     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
       <div>
-        <p class="font-medium">Name:</p>
+        <p class="font-medium">
+          {{ "DASHBOARD.TABLE.COLUMNS.NAME" | translate }}:
+        </p>
         <p>{{ employee.name }}</p>
       </div>
 
       <div>
-        <p class="font-medium">Department:</p>
-        <p>{{ employee.department }}</p>
+        <p class="font-medium">
+          {{ "DASHBOARD.TABLE.COLUMNS.DEPARTMENT" | translate }}:
+        </p>
+        <p>{{ employee.department | translate }}</p>
       </div>
 
       <div>
-        <p class="font-medium">Role:</p>
-        <p>{{ employee.role }}</p>
+        <p class="font-medium">
+          {{ "DASHBOARD.TABLE.COLUMNS.ROLE" | translate }}:
+        </p>
+        <p>{{ employee.role | translate }}</p>
       </div>
 
       <div>
-        <p class="font-medium">Salary:</p>
+        <p class="font-medium">
+          {{ "DASHBOARD.TABLE.COLUMNS.SALARY" | translate }}:
+        </p>
         <p>{{ employee.salary | nepaliCurrency }}</p>
       </div>
 
       <div class="md:col-span-2">
-        <p class="font-medium">Joining Date:</p>
+        <p class="font-medium">
+          {{ "DASHBOARD.TABLE.COLUMNS.JOINING_DATE" | translate }}:
+        </p>
         <p>{{ employee.joiningDate | date }}</p>
       </div>
     </div>
