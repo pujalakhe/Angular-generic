@@ -8,11 +8,11 @@ export function fileValidator(
     const file = control.value as File | null;
 
     if (!file) return null;
-    // Check file type
-    // Check file size
+
     if (file.size > maxSize) {
       return { maxSizeExceeded: true };
     }
+
     if (!allowedTypes.includes(file.type)) {
       return { invalidFileType: true };
     }
