@@ -6,6 +6,8 @@ import { PrivateLayoutComponent } from '../../../core/constants/components/priva
 import { AttendanceListComponent } from './components/attendance-list-component/attendance-list-component';
 import { FilterComponent } from '../../../shared/components/filter-component/filter-component';
 
+import { FileUploadComponent } from '../../../shared/components/file-upload-component/file-upload-component';
+
 @NgModule({
   declarations: [AttendanceListComponent],
   imports: [
@@ -13,6 +15,7 @@ import { FilterComponent } from '../../../shared/components/filter-component/fil
     AttendanceRoutingModule,
     PrivateLayoutComponent,
     FilterComponent,
+    FileUploadComponent,
   ],
 })
 export class AttendanceModule {}
