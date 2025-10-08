@@ -5,6 +5,7 @@ import { Employee } from '../../model/employee-model';
 import { EmployeeFormBuilderService } from '../../services/employee-form-builder-service';
 import { MatDialog } from '@angular/material/dialog';
 import { confirmUnsavedChanges } from '../../../../../core/utils/form.utils';
+import { HttpClient } from '@angular/common/http';
 
 const EMP_FORM = 'EMPLOYEE_FORM';
 @Component({
@@ -17,12 +18,13 @@ export class EmployeeFormComponent implements OnInit {
   @Input() mode: 'add' | 'edit' = 'add'; // to switch between Add/Edit
   @Input() initialData?: Employee; // optional data for edit
   @Output() formSubmit = new EventEmitter<Employee>();
-
+  uploadedFiles: string[] = [];
   employeeForm?: FormGroup;
 
   constructor(
     private employeeFormBuilderService: EmployeeFormBuilderService,
-    private dialog: MatDialog
+    private dialog: MatDialog,
+    private httpClient: HttpClient
   ) {}
 
   reset = `${EMP_FORM}.RESET`;
@@ -73,11 +75,32 @@ export class EmployeeFormComponent implements OnInit {
     }
   }
 
+  uploadEmployeePhoto(files: FileList | null) {
+    if (!files) return;
+    const file = files.item(0);
+    if (!file) return;
+
+    // Correct way to set value
+    this.employeeForm?.get('photo')?.setValue(file);
+  }
+
+  uploadEmployeeCV(files: FileList | null) {
+    if (!files) return;
+    const file = files.item(0);
+    console.log(file);
+
+    if (!file) return;
+
+    // Correct way to set value
+    this.employeeForm?.get('cv')?.setValue(file);
+    console.log(this.employeeForm?.get('cv')?.setValue(file));
+  }
+
   onSubmit(): void {
-    if (this.employeeForm?.invalid) {
-      this.employeeFormBuilderService.applyTouchAndDirtyToForm();
-      return;
-    }
+    // if (this.employeeForm?.invalid) {
+    //   this.employeeFormBuilderService.applyTouchAndDirtyToForm();
+    //   return;
+    // }
 
     this.formSubmit.emit(this.employeeForm?.value);
   }

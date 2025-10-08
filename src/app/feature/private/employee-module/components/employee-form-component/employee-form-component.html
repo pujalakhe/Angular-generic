@@ -47,6 +47,26 @@
       [control]="joiningDate"
     ></app-input-date-component>
 
+    <div>
+      <mat-label>Upload Image</mat-label>
+      <br />
+      <input type="file" (change)="uploadEmployeePhoto($event.target.files)" />
+      @if(employeeForm.get('photo')?.hasError('invalidFileType')){
+      <mat-error> Only Png images are allowed</mat-error>}
+      @if(employeeForm.get('photo')?.hasError('maxSizeExceeded')){
+      <mat-error> File size must not exceed 3MB.</mat-error>}
+    </div>
+
+    <div>
+      <mat-label>Upload Your Cv</mat-label>
+      <br />
+      <input type="file" (change)="uploadEmployeeCV($event.target.files)" />
+      @if(employeeForm.get('cv')?.hasError('invalidFileType')){
+      <mat-error> Only Pdf and Docs files are allowed</mat-error>}
+      @if(employeeForm.get('cv')?.hasError('maxSizeExceeded')){
+      <mat-error> File size must not exceed 5MB.</mat-error>}
+    </div>
+
     <!-- Buttons -->
     <div class="flex justify-end space-x-4">
       @if(mode==='add'){

@@ -9,12 +9,12 @@ export function fileValidator(
 
     if (!file) return null;
 
-    if (file.size > maxSize) {
-      return { maxSizeExceeded: true };
-    }
-
     if (!allowedTypes.includes(file.type)) {
       return { invalidFileType: true };
+    }
+
+    if (file.size > maxSize) {
+      return { maxSizeExceeded: true };
     }
 
     return null; // valid

@@ -6,6 +6,8 @@ import { fileValidator } from '../../../../shared/custom-validators/file.validat
 import {
   IMAGE_FILE_TYPE,
   MAX_IMAGE_SIZE,
+  MAX_PDF_SIZE,
+  OTHER_FILE_TYPE,
 } from '../../../../core/constants/messages';
 
 @Injectable({
@@ -27,8 +29,9 @@ export class EmployeeFormBuilderService extends BaseFormService {
       ],
       photo: [
         config?.photo ?? null,
-        [fileValidator(MAX_IMAGE_SIZE, [IMAGE_FILE_TYPE])],
+        [fileValidator(MAX_IMAGE_SIZE, IMAGE_FILE_TYPE)],
       ],
+      cv: [config?.cv ?? null, [fileValidator(MAX_PDF_SIZE, OTHER_FILE_TYPE)]],
     });
   }
 }
