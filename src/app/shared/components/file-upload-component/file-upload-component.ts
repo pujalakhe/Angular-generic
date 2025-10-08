@@ -12,8 +12,8 @@ export class FileUploadComponent {
   uploadedFiles: string[] = [];
   fileUrl: string = 'http://storeapi.gerasim.in/customer/';
   constructor(private httpClient: HttpClient) {}
-  uploadFile(event: any) {
-    const file = event.currentTarget.files[0];
+  uploadFile(files: any) {
+    const file = files[0];
     if (file.type === 'image/png' && file.size <= 3145728) {
       const formOb = new FormData();
       formOb.append('file', file);

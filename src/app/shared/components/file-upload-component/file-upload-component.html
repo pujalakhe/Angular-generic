@@ -1,7 +1,7 @@
 <br />
 <br />
 <br />
-<input type="file" (change)="uploadFile($event)" />
+<input type="file" (change)="uploadFile($event.target.files)" />
 <div *ngFor="let file of uploadedFiles">
   <img [src]="fileUrl + file" image="" alt="Uploaded Image" width="250" />
 
