@@ -29,9 +29,12 @@ export class EmployeeFormBuilderService extends BaseFormService {
       ],
       photo: [
         config?.photo ?? null,
-        [fileValidator(MAX_IMAGE_SIZE, IMAGE_FILE_TYPE)],
+        [Validators.required, fileValidator(MAX_IMAGE_SIZE, IMAGE_FILE_TYPE)],
       ],
-      cv: [config?.cv ?? null, [fileValidator(MAX_PDF_SIZE, OTHER_FILE_TYPE)]],
+      cv: [
+        config?.cv ?? null,
+        [Validators.required, fileValidator(MAX_PDF_SIZE, OTHER_FILE_TYPE)],
+      ],
     });
   }
 }

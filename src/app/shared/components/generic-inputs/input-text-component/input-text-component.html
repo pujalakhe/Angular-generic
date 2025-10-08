@@ -9,7 +9,7 @@
     [placeholder]="placeholder | translate"
     [type]="type"
   />
-  @if(control.hasError('required') && control.dirty){
+  @if(control.hasError('required') && control.dirty || control.touched){
   <mat-error>
     {{
       "FORM_ERRORS.INPUT_REQUIRED" | translate : { label: label | translate }

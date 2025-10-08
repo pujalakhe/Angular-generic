@@ -6,6 +6,7 @@ import { EmployeeFormBuilderService } from '../../services/employee-form-builder
 import { MatDialog } from '@angular/material/dialog';
 import { confirmUnsavedChanges } from '../../../../../core/utils/form.utils';
 import { HttpClient } from '@angular/common/http';
+import { setFileToFormControl } from '../../../../../shared/utils/file-upload.utils';
 
 const EMP_FORM = 'EMPLOYEE_FORM';
 @Component({
@@ -62,6 +63,14 @@ export class EmployeeFormComponent implements OnInit {
     return this.employeeForm?.get('salary') as FormControl;
   }
 
+  get photo(): FormControl {
+    return this.employeeForm?.get('photo') as FormControl;
+  }
+
+  get cv(): FormControl {
+    return this.employeeForm?.get('cv') as FormControl;
+  }
+
   #buildForm() {
     this.employeeFormBuilderService.buildEmployeeForm(this.initialData);
   }
@@ -76,31 +85,22 @@ export class EmployeeFormComponent implements OnInit {
   }
 
   uploadEmployeePhoto(files: FileList | null) {
-    if (!files) return;
-    const file = files.item(0);
-    if (!file) return;
-
-    // Correct way to set value
-    this.employeeForm?.get('photo')?.setValue(file);
+    if (this.employeeForm) {
+      setFileToFormControl(this.employeeForm, 'photo', files);
+    }
   }
 
   uploadEmployeeCV(files: FileList | null) {
-    if (!files) return;
-    const file = files.item(0);
-    console.log(file);
-
-    if (!file) return;
-
-    // Correct way to set value
-    this.employeeForm?.get('cv')?.setValue(file);
-    console.log(this.employeeForm?.get('cv')?.setValue(file));
+    if (this.employeeForm) {
+      setFileToFormControl(this.employeeForm, 'cv', files);
+    }
   }
 
   onSubmit(): void {
-    // if (this.employeeForm?.invalid) {
-    //   this.employeeFormBuilderService.applyTouchAndDirtyToForm();
-    //   return;
-    // }
+    if (this.employeeForm?.invalid) {
+      this.employeeFormBuilderService.applyTouchAndDirtyToForm();
+      return;
+    }
 
     this.formSubmit.emit(this.employeeForm?.value);
   }

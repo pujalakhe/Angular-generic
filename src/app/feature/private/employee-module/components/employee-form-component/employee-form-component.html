@@ -51,6 +51,8 @@
       <mat-label>Upload Image</mat-label>
       <br />
       <input type="file" (change)="uploadEmployeePhoto($event.target.files)" />
+      @if(photo.hasError('required')&& (photo.dirty || photo.touched)){
+      <mat-error> This field is required</mat-error>}
       @if(employeeForm.get('photo')?.hasError('invalidFileType')){
       <mat-error> Only Png images are allowed</mat-error>}
       @if(employeeForm.get('photo')?.hasError('maxSizeExceeded')){
@@ -61,6 +63,8 @@
       <mat-label>Upload Your Cv</mat-label>
       <br />
       <input type="file" (change)="uploadEmployeeCV($event.target.files)" />
+      @if(cv.hasError('required')&& (cv.dirty || cv.touched)){
+      <mat-error> This field is required</mat-error>}
       @if(employeeForm.get('cv')?.hasError('invalidFileType')){
       <mat-error> Only Pdf and Docs files are allowed</mat-error>}
       @if(employeeForm.get('cv')?.hasError('maxSizeExceeded')){
