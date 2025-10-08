@@ -29,7 +29,9 @@
         "NAME": "नाम",
         "DEPARTMENT": "विभाग",
         "ROLE": "भूमिका",
-        "JOINING_DATE": "ज्वाइन गरेको मिति"
+        "JOINING_DATE": "ज्वाइन गरेको मिति",
+
+        "SALARY": "तलब"
       }
     },
     "CARDS": {
@@ -116,5 +118,9 @@
 
   "UPDATE_EMPLOYEE": {
     "TITLE": "कर्मचारी अपडेट गर्नुहोस्"
+  },
+
+  "EMPLOYEE_DETAIL": {
+    "TITLE": "कर्मचारी विवरण"
   }
 }

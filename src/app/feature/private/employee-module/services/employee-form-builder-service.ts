@@ -2,6 +2,13 @@ import { Injectable } from '@angular/core';
 import { BaseFormService } from '../../../../core/services/base-form-service';
 import { Employee } from '../model/employee-model';
 import { Validators } from '@angular/forms';
+import { fileValidator } from '../../../../shared/custom-validators/file.validators';
+import {
+  IMAGE_FILE_TYPE,
+  MAX_IMAGE_SIZE,
+  MAX_PDF_SIZE,
+  OTHER_FILE_TYPE,
+} from '../../../../core/constants/messages';
 
 @Injectable({
   providedIn: 'root',
@@ -19,6 +26,14 @@ export class EmployeeFormBuilderService extends BaseFormService {
       joiningDate: [
         config?.joiningDate ? new Date(config.joiningDate) : null,
         Validators.required,
+      ],
+      photo: [
+        config?.photo ?? null,
+        [Validators.required, fileValidator(MAX_IMAGE_SIZE, IMAGE_FILE_TYPE)],
+      ],
+      cv: [
+        config?.cv ?? null,
+        [Validators.required, fileValidator(MAX_PDF_SIZE, OTHER_FILE_TYPE)],
       ],
     });
   }

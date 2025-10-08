@@ -27,7 +27,8 @@
         "NAME": "Nom",
         "DEPARTMENT": "Département",
         "ROLE": "Rôle",
-        "JOINING_DATE": "Date d'entrée"
+        "JOINING_DATE": "Date d'entrée",
+        "SALARY": "Salaire"
       }
     },
     "Error_MESSAGE": "No records found",
@@ -112,5 +113,8 @@
 
   "UPDATE_EMPLOYEE": {
     "TITLE": "Mettre à jour l'employé"
+  },
+  "EMPLOYEE_DETAIL": {
+    "TITLE": "Détails des employés"
   }
 }

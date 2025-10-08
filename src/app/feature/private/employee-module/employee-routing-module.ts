@@ -8,6 +8,7 @@ import { EmployeeListComponent } from './components/employee-list-component/empl
 import { AddEmployeeComponent } from './components/add-employee-component/add-employee-component';
 import { UpdateEmployeeFormComponent } from './components/update-employee-form-component/update-employee-form-component';
 import { EmployeeDetailComponent } from './components/employee-detail-component/employee-detail-component';
+import { unsavedChangesGuard } from '../../../core/guards/unsaved-changes-guard';
 
 const routes: Routes = [
   {
@@ -17,10 +18,12 @@ const routes: Routes = [
   {
     path: ROUTE_PATHS.ADD,
     component: AddEmployeeComponent,
+    canDeactivate: [unsavedChangesGuard],
   },
   {
     path: `${ROUTE_PATHS.UPDATE}/:${QUERY_PARAM.ID}`,
     component: UpdateEmployeeFormComponent,
+    canDeactivate: [unsavedChangesGuard],
   },
   {
     path: `${ROUTE_PATHS.DETAIL}/:${QUERY_PARAM.ID}`,
