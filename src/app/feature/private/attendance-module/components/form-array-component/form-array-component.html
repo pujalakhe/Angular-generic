@@ -1,0 +1,21 @@
+@if(eventForm){
+
+<form [formGroup]="eventForm" (ngSubmit)="submit()">
+  <div formArrayName="events">
+    <div
+      *ngFor="let event of events.controls; let i = index"
+      [formGroupName]="i"
+      class="event-group"
+    >
+      <input formControlName="eventName" placeholder="Event Name" />
+      <input formControlName="address" placeholder="Address" />
+      <input formControlName="time" type="time" />
+
+      <button type="button" (click)="removeEvent(i)">Remove</button>
+    </div>
+  </div>
+</form>
+<button type="button" (click)="addEvent()">Add Event</button>
+<button type="submit">Submit</button>
+<pre>{{ eventForm.value | json }}</pre>
+}
