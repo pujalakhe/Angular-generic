@@ -1,21 +1,64 @@
-@if(eventForm){
-
-<form [formGroup]="eventForm" (ngSubmit)="submit()">
+@if (eventForm) {
+<form [formGroup]="eventForm" (ngSubmit)="submit()" class="event-form">
   <div formArrayName="events">
-    <div
-      *ngFor="let event of events.controls; let i = index"
-      [formGroupName]="i"
-      class="event-group"
-    >
-      <input formControlName="eventName" placeholder="Event Name" />
-      <input formControlName="address" placeholder="Address" />
-      <input formControlName="time" type="time" />
+    @for (event of events.controls; track $index) {
+    <div [formGroupName]="$index" class="event-group">
+      <mat-form-field appearance="outline" hidden>
+        <mat-label>Event ID</mat-label>
+        <input matInput formControlName="eventId" [value]="$index + 1" />
+      </mat-form-field>
 
-      <button type="button" (click)="removeEvent(i)">Remove</button>
+      <mat-form-field appearance="outline">
+        <mat-label>Event Name</mat-label>
+        <input matInput formControlName="eventName" placeholder="Enter name" />
+        <mat-error *ngIf="event.get('eventName')?.hasError('required')">
+          Event Name is required
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Address</mat-label>
+        <input matInput formControlName="address" placeholder="Enter address" />
+        <mat-error *ngIf="event.get('address')?.hasError('required')">
+          Address is required
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Time</mat-label>
+        <input matInput formControlName="time" type="time" />
+        <mat-error *ngIf="event.get('time')?.hasError('required')">
+          Time is required
+        </mat-error>
+      </mat-form-field>
+
+      @if(events.length>1){
+
+      <button
+        mat-raised-button
+        color="warn"
+        type="button"
+        (click)="removeEvent($index)"
+      >
+        Remove
+      </button>
+      }
     </div>
+    }
+  </div>
+
+  <div class="actions">
+    <button
+      mat-raised-button
+      color="primary"
+      type="button"
+      (click)="addEvent()"
+    >
+      Add Event
+    </button>
+    <button mat-raised-button color="accent" type="submit">Submit</button>
   </div>
 </form>
-<button type="button" (click)="addEvent()">Add Event</button>
-<button type="submit">Submit</button>
+
 <pre>{{ eventForm.value | json }}</pre>
 }

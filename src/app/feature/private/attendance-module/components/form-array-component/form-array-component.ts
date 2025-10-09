@@ -24,8 +24,9 @@ export class FormArrayComponent {
     return this.eventForm?.get('events') as FormArray;
   }
 
-  createEvent(): FormGroup {
+  createEvent(index?: number): FormGroup {
     return this.fb.group({
+      eventId: [index ? index + 1 : '', Validators.required],
       eventName: ['', Validators.required],
       address: ['', Validators.required],
       time: ['', Validators.required],
@@ -41,6 +42,7 @@ export class FormArrayComponent {
   }
 
   submit(): void {
+    console.log(this.eventForm?.value);
     if (this.eventForm?.valid) {
       console.log(this.eventForm?.value);
     }

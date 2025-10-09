@@ -9,6 +9,7 @@ import { FilterComponent } from '../../../shared/components/filter-component/fil
 import { FileUploadComponent } from '../../../shared/components/file-upload-component/file-upload-component';
 import { FormArrayComponent } from './components/form-array-component/form-array-component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { MaterialModule } from '../../../shared/material/material-module';
 
 @NgModule({
   declarations: [AttendanceListComponent, FormArrayComponent],
@@ -19,6 +20,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     FilterComponent,
     FileUploadComponent,
     ReactiveFormsModule,
+    MaterialModule,
   ],
 })
 export class AttendanceModule {}
