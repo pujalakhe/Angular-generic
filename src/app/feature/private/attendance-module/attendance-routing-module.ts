@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AttendanceListComponent } from './components/attendance-list-component/attendance-list-component';
 import { FormArrayComponent } from './components/form-array-component/form-array-component';
+import { DropdownValidationComponent } from './dropdown-validation-component/dropdown-validation-component';
 
 const routes: Routes = [
   {
@@ -11,6 +12,10 @@ const routes: Routes = [
   {
     path: 'form-array',
     component: FormArrayComponent,
+  },
+  {
+    path: 'dropdown',
+    component: DropdownValidationComponent,
   },
 ];
 

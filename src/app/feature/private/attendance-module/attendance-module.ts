@@ -10,9 +10,16 @@ import { FileUploadComponent } from '../../../shared/components/file-upload-comp
 import { FormArrayComponent } from './components/form-array-component/form-array-component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MaterialModule } from '../../../shared/material/material-module';
+import { DropdownValidationComponent } from './dropdown-validation-component/dropdown-validation-component';
+import { InputSelectComponent } from '../../../shared/components/generic-inputs/input-select-component/input-select-component';
+import { InputNumberComponent } from '../../../shared/components/generic-inputs/input-number-component/input-number-component';
 
 @NgModule({
-  declarations: [AttendanceListComponent, FormArrayComponent],
+  declarations: [
+    AttendanceListComponent,
+    FormArrayComponent,
+    DropdownValidationComponent,
+  ],
   imports: [
     CommonModule,
     AttendanceRoutingModule,
@@ -21,6 +28,8 @@ import { MaterialModule } from '../../../shared/material/material-module';
     FileUploadComponent,
     ReactiveFormsModule,
     MaterialModule,
+    InputSelectComponent,
+    InputNumberComponent,
   ],
 })
 export class AttendanceModule {}
