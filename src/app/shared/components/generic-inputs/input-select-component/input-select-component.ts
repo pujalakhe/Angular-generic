@@ -12,7 +12,10 @@ import { TranslateModule } from '@ngx-translate/core';
 export class InputSelectComponent {
   @Input({ required: true }) control?: FormControl;
   @Input({ required: true }) label: string = 'Select option';
-  @Input({ required: true }) options: { value: string; label: string }[] = [];
+  @Input({ required: true }) options: {
+    value: string | number;
+    label: string;
+  }[] = [];
   @Input() placeholder: string = 'Please choose';
 
   @Output() inputSelectChanged: EventEmitter<string> =
