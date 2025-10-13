@@ -1,0 +1,58 @@
+@if(form){
+
+<form action="" [formGroup]="form" (ngSubmit)="submit()">
+  <div formArrayName="incomes" class="bg-gray-50 p-4 rounded-md">
+    <div class="flex justify-between items-center mb-2">
+      <h3 class="font-semibold">Income</h3>
+      <button
+        mat-raised-button
+        color="accent"
+        type="button"
+        (click)="addIncome()"
+      >
+        + Add Income
+      </button>
+    </div>
+
+    @for (income of incomes.controls; track income; let i = $index) {
+    <div [formGroupName]="i" class="border p-3 rounded mb-3 bg-white">
+      <app-input-select-component
+        [control]="getArrayControl(i, 'frequency')"
+        [label]="'Frequency'"
+        [placeholder]="'Select frequency'"
+        [options]="getAvailableFrequencyOptions(i)"
+      ></app-input-select-component>
+
+      <app-input-select-component
+        [control]="getArrayControl(i, 'interval')"
+        [label]="'Interval'"
+        [placeholder]="'Select interval'"
+        [options]="getAvailableIntervalOptions(i)"
+      ></app-input-select-component>
+
+      <app-input-number-component
+        [control]="getArrayControl(i, 'amount')"
+        [label]="'Amount'"
+        [placeholder]="'Enter Amount'"
+        [min]="1"
+      ></app-input-number-component>
+
+      @if(incomes.length>1){
+      <button
+        mat-raised-button
+        color="accent"
+        type="button"
+        (click)="removeIncome(i)"
+      >
+        Remove
+      </button>
+
+      }
+    </div>
+    } @if(incomes.length>0){
+
+    <button mat-raised-button color="accent">Submit</button>
+    }
+  </div>
+</form>
+}
