@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { BaseFormService } from '../../../../core/services/base-form-service';
 import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { IncomeValidator } from '../../../../shared/custom-validators/income-validator';
 
 @Injectable({
   providedIn: 'root',
@@ -11,7 +12,7 @@ export class IncomeFormBuilderService extends BaseFormService {
   }
   buildInForm() {
     return this.buildForm({
-      incomes: this.fb.array([]),
+      incomes: this.fb.array([], [IncomeValidator.relativeAmount()]),
     });
   }
   createIncome(): FormGroup {
