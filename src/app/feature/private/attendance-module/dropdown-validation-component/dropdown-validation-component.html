@@ -13,7 +13,6 @@
         + Add Income
       </button>
     </div>
-
     @for (income of incomes.controls; track income; let i = $index) {
     <div [formGroupName]="i" class="border p-3 rounded mb-3 bg-white">
       <app-input-select-component
@@ -29,15 +28,17 @@
         [placeholder]="'Select interval'"
         [options]="getAvailableIntervalOptions(i)"
       ></app-input-select-component>
-
       <app-input-number-component
         [control]="getArrayControl(i, 'amount')"
         [label]="'Amount'"
         [placeholder]="'Enter Amount'"
         [min]="1"
       ></app-input-number-component>
-
-      @if(incomes.length>1){
+      @if (getIncomeErrorMessage(i)) {
+      <div class="text-red-700 rounded mb-3 text-sm">
+        <mat-error>{{ getIncomeErrorMessage(i) }}</mat-error>
+      </div>
+      } @if(incomes.length>1){
       <button
         mat-raised-button
         color="accent"

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { EmployeeFormBuilderService } from '../../employee-module/services/employee-form-builder-service';
 import { Form, FormArray, FormControl, FormGroup } from '@angular/forms';
-import { IncomeFormBuilderService } from '../../employee-module/services/incom-form-builder-service';
+import { IncomeFormBuilderService } from '../../employee-module/services/income-form-builder-service';
 
 type OptionType = { value: number | string; label: string };
 
@@ -40,9 +40,34 @@ export class DropdownValidationComponent {
     return this.incomeFormService.incomes;
   }
 
+  get amount(): FormControl {
+    console.log(this.incomes.get('amount'));
+
+    return this.incomes.get('amount') as FormControl;
+  }
+
+  getIncomeErrorMessage(index: number): string | null {
+    const error = this.incomes.errors?.['invalidIncomeHierarchy'];
+
+    if (error) {
+      // Check if this index is the invalid one or the conflicting one
+      if (error.invalidIndex === index) {
+        return error.message;
+      }
+
+      // Optionally highlight the conflicting income too
+      if (error.conflictingIndex === index) {
+        return 'This income conflicts with another entry';
+      }
+    }
+
+    return null;
+  }
+
   getArrayControl(index: number, controlName: string): FormControl {
     return this.incomes.at(index).get(controlName) as FormControl;
   }
+
   addIncome(): void {
     this.incomeFormService.addIncome();
   }

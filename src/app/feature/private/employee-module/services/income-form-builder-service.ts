@@ -12,7 +12,7 @@ export class IncomeFormBuilderService extends BaseFormService {
   }
   buildInForm() {
     return this.buildForm({
-      incomes: this.fb.array([], [IncomeValidator.relativeAmount()]),
+      incomes: this.fb.array([], [IncomeValidator.incomeConsistency()]),
     });
   }
   createIncome(): FormGroup {

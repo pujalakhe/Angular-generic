@@ -25,6 +25,10 @@ import { InputDateComponent } from '../../../shared/components/generic-inputs/in
 import { InputTextComponent } from '../../../shared/components/generic-inputs/input-text-component/input-text-component';
 import { InputNumberComponent } from '../../../shared/components/generic-inputs/input-number-component/input-number-component';
 import { TranslateModule } from '@ngx-translate/core';
+import { StoreFeatureModule, StoreModule } from '@ngrx/store';
+import { employeeReducer } from './store/employee/employee.reducer';
+import { EffectsModule } from '@ngrx/effects';
+import { EmployeeEffects } from './store/employee/employee.effect';
 
 @NgModule({
   declarations: [
@@ -55,6 +59,9 @@ import { TranslateModule } from '@ngx-translate/core';
     InputDateComponent,
     InputNumberComponent,
     TranslateModule,
+    LoadingComponent,
+    StoreModule.forFeature('employee', employeeReducer),
+    EffectsModule.forFeature(EmployeeEffects),
   ],
 })
 export class EmployeeModule {}

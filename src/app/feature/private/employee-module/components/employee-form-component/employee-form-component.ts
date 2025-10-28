@@ -7,6 +7,9 @@ import { MatDialog } from '@angular/material/dialog';
 import { confirmUnsavedChanges } from '../../../../../core/utils/form.utils';
 import { HttpClient } from '@angular/common/http';
 import { setFileToFormControl } from '../../../../../shared/utils/file-upload.utils';
+import { Observable } from 'rxjs';
+import { Store } from '@ngrx/store';
+import { selectLoading } from '../../store/employee/employee.selector';
 
 const EMP_FORM = 'EMPLOYEE_FORM';
 @Component({
@@ -21,11 +24,13 @@ export class EmployeeFormComponent implements OnInit {
   @Output() formSubmit = new EventEmitter<Employee>();
   uploadedFiles: string[] = [];
   employeeForm?: FormGroup;
+  loading$?: Observable<boolean>;
 
   constructor(
     private employeeFormBuilderService: EmployeeFormBuilderService,
     private dialog: MatDialog,
-    private httpClient: HttpClient
+    private httpClient: HttpClient,
+    private store: Store
   ) {}
 
   reset = `${EMP_FORM}.RESET`;
@@ -39,9 +44,11 @@ export class EmployeeFormComponent implements OnInit {
     { value: 'Marketing', label: 'EMPLOYEE_FORM.DEPARTMENT_OPTIONS.MARKETING' },
   ];
   ngOnInit(): void {
+    this.loading$ = this.store.select(selectLoading);
     this.#buildForm();
     this.employeeForm = this.employeeFormBuilderService.form;
     this.#disableOrEnableControls();
+    this.store.select(selectLoading).subscribe((res) => console.log(res));
   }
 
   get department() {
@@ -103,6 +110,7 @@ export class EmployeeFormComponent implements OnInit {
     }
 
     this.formSubmit.emit(this.employeeForm?.value);
+    this.employeeForm?.markAsPristine();
   }
 
   onReset() {

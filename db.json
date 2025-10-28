@@ -1,0 +1,24 @@
+{
+  "employees": [
+    {
+      "id": "dc63",
+      "name": "Louis Bray",
+      "department": "HR",
+      "role": "Sit necessitatibus n",
+      "salary": 100,
+      "joiningDate": "1996-04-11T18:15:00.000Z",
+      "photo": null,
+      "cv": null
+    },
+    {
+      "id": "1185",
+      "name": "Hedda Santana",
+      "department": "Finance",
+      "role": "Est repellendus Est",
+      "salary": 100,
+      "joiningDate": "2020-05-10T18:15:00.000Z",
+      "photo": null,
+      "cv": null
+    }
+  ]
+}

@@ -1,89 +1,90 @@
-<div>
-  @if(employeeForm){
+@if(loading$| async){
 
-  <form
-    [formGroup]="employeeForm"
-    (ngSubmit)="onSubmit()"
-    class="space-y-6"
-    [appFocusInvalid]="employeeForm"
-    appAutoFocusInput
-  >
-    <!-- Full Name -->
-    <app-input-text-component
-      [label]="'EMPLOYEE_FORM.FULL_NAME_LABEL'"
-      [placeholder]="'EMPLOYEE_FORM.FULL_NAME_PLACEHOLDER'"
-      [type]="'text'"
-      [control]="full_name"
-    ></app-input-text-component>
+<app-loading-component></app-loading-component>
+} @if(employeeForm ){
 
-    <!-- Department -->
-    <app-input-select-component
-      [control]="department"
-      [placeholder]="'EMPLOYEE_FORM.DEPARTMENT_PLACEHOLDER'"
-      [options]="departmentOptions"
-      [label]="'EMPLOYEE_FORM.DEPARTMENT_LABEL'"
-    ></app-input-select-component>
+<form
+  [formGroup]="employeeForm"
+  (ngSubmit)="onSubmit()"
+  class="space-y-6"
+  [appFocusInvalid]="employeeForm"
+  appAutoFocusInput
+>
+  <!-- Full Name -->
+  <app-input-text-component
+    [label]="'EMPLOYEE_FORM.FULL_NAME_LABEL'"
+    [placeholder]="'EMPLOYEE_FORM.FULL_NAME_PLACEHOLDER'"
+    [type]="'text'"
+    [control]="full_name"
+  ></app-input-text-component>
 
-    <!-- Role -->
-    <app-input-text-component
-      [label]="'EMPLOYEE_FORM.ROLE_LABEL'"
-      [placeholder]="'EMPLOYEE_FORM.ROLE_PLACEHOLDER'"
-      [type]="'text'"
-      [control]="role"
-    ></app-input-text-component>
+  <!-- Department -->
+  <app-input-select-component
+    [control]="department"
+    [placeholder]="'EMPLOYEE_FORM.DEPARTMENT_PLACEHOLDER'"
+    [options]="departmentOptions"
+    [label]="'EMPLOYEE_FORM.DEPARTMENT_LABEL'"
+  ></app-input-select-component>
 
-    <!-- salary -->
-    <app-input-number-component
-      [label]="'EMPLOYEE_FORM.SALARY_LABEL'"
-      [placeholder]="'EMPLOYEE_FORM.SALARY_PLACEHOLDER'"
-      [control]="salary"
-      [min]="100"
-    ></app-input-number-component>
+  <!-- Role -->
+  <app-input-text-component
+    [label]="'EMPLOYEE_FORM.ROLE_LABEL'"
+    [placeholder]="'EMPLOYEE_FORM.ROLE_PLACEHOLDER'"
+    [type]="'text'"
+    [control]="role"
+  ></app-input-text-component>
 
-    <!-- Joining Date -->
-    <app-input-date-component
-      [label]="'EMPLOYEE_FORM.JOINING_DATE_LABEL'"
-      [placeholder]="'EMPLOYEE_FORM.JOINING_DATE_PLACEHOLDER'"
-      [control]="joiningDate"
-    ></app-input-date-component>
+  <!-- salary -->
+  <app-input-number-component
+    [label]="'EMPLOYEE_FORM.SALARY_LABEL'"
+    [placeholder]="'EMPLOYEE_FORM.SALARY_PLACEHOLDER'"
+    [control]="salary"
+    [min]="100"
+  ></app-input-number-component>
 
-    <div>
-      <mat-label>Upload Image</mat-label>
-      <br />
-      <input type="file" (change)="uploadEmployeePhoto($event.target.files)" />
-      @if(photo.hasError('required')&& (photo.dirty || photo.touched)){
-      <mat-error> This field is required</mat-error>}
-      @if(employeeForm.get('photo')?.hasError('invalidFileType')){
-      <mat-error> Only Png images are allowed</mat-error>}
-      @if(employeeForm.get('photo')?.hasError('maxSizeExceeded')){
-      <mat-error> File size must not exceed 3MB.</mat-error>}
-    </div>
+  <!-- Joining Date -->
+  <app-input-date-component
+    [label]="'EMPLOYEE_FORM.JOINING_DATE_LABEL'"
+    [placeholder]="'EMPLOYEE_FORM.JOINING_DATE_PLACEHOLDER'"
+    [control]="joiningDate"
+  ></app-input-date-component>
 
-    <div>
-      <mat-label>Upload Your Cv</mat-label>
-      <br />
-      <input type="file" (change)="uploadEmployeeCV($event.target.files)" />
-      @if(cv.hasError('required')&& (cv.dirty || cv.touched)){
-      <mat-error> This field is required</mat-error>}
-      @if(employeeForm.get('cv')?.hasError('invalidFileType')){
-      <mat-error> Only Pdf and Docs files are allowed</mat-error>}
-      @if(employeeForm.get('cv')?.hasError('maxSizeExceeded')){
-      <mat-error> File size must not exceed 5MB.</mat-error>}
-    </div>
+  <div>
+    <mat-label>Upload Image</mat-label>
+    <br />
+    <input type="file" (change)="uploadEmployeePhoto($event.target.files)" />
+    @if(photo.hasError('required')&& (photo.dirty || photo.touched)){
+    <mat-error> This field is required</mat-error>}
+    @if(employeeForm.get('photo')?.hasError('invalidFileType')){
+    <mat-error> Only Png images are allowed</mat-error>}
+    @if(employeeForm.get('photo')?.hasError('maxSizeExceeded')){
+    <mat-error> File size must not exceed 3MB.</mat-error>}
+  </div>
 
-    <!-- Buttons -->
-    <div class="flex justify-end space-x-4">
-      @if(mode==='add'){
+  <div>
+    <mat-label>Upload Your Cv</mat-label>
+    <br />
+    <input type="file" (change)="uploadEmployeeCV($event.target.files)" />
+    @if(cv.hasError('required')&& (cv.dirty || cv.touched)){
+    <mat-error> This field is required</mat-error>}
+    @if(employeeForm.get('cv')?.hasError('invalidFileType')){
+    <mat-error> Only Pdf and Docs files are allowed</mat-error>}
+    @if(employeeForm.get('cv')?.hasError('maxSizeExceeded')){
+    <mat-error> File size must not exceed 5MB.</mat-error>}
+  </div>
 
-      <button mat-stroked-button color="warn" type="button" (click)="onReset()">
-        {{ reset | translate }}
-      </button>
+  <!-- Buttons -->
+  <div class="flex justify-end space-x-4">
+    @if(mode==='add'){
 
-      }
-      <button mat-raised-button color="primary" type="submit">
-        {{ (mode === "add" ? save : update) | translate }}
-      </button>
-    </div>
-  </form>
-  }
-</div>
+    <button mat-stroked-button color="warn" type="button" (click)="onReset()">
+      {{ reset | translate }}
+    </button>
+
+    }
+    <button mat-raised-button color="primary" type="submit">
+      {{ (mode === "add" ? save : update) | translate }}
+    </button>
+  </div>
+</form>
+}

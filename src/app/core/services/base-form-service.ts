@@ -45,6 +45,9 @@ export abstract class BaseFormService {
     this.form?.markAsDirty();
   }
 
+  applyPristine() {
+    this.form?.markAsPristine();
+  }
   resetForm(): void {
     this.form = new FormGroup({});
   }
